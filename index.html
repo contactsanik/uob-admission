@@ -1,337 +1,382 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bn">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#14284b">
-<title>ভর্তি তথ্যকেন্দ্র | ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়</title>
-<meta name="description" content="ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়ের স্প্রিং ২০২৭ ভর্তি: প্রোগ্রাম, খরচ, ওয়েভার ও আবেদনের সব তথ্য এক জায়গায়।">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>স্প্রিং ২০২৭ ভর্তি — ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়</title>
+<meta name="description" content="ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়ে স্প্রিং ২০২৭ ভর্তি — প্রোগ্রাম, মোট ফি, আবেদনের ধাপ আর যোগাযোগ, এক পাতায়।">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-@font-face{font-family:"SolaimanLipi";src:local("SolaimanLipi"),url("fonts/SolaimanLipi.ttf") format("truetype");font-display:swap}
-@font-face{font-family:"Kalpurush";src:local("Kalpurush"),url("fonts/Kalpurush.ttf") format("truetype");font-display:swap}
-:root{--navy:#14284b;--red:#b4372d;--ink:#1c2128;--muted:#5a6470;--line:#d8dde3;--soft:#eef1f5;--f-h:"SolaimanLipi","Kalpurush","Hind Siliguri",sans-serif;--f-b:"SolaimanLipi","Kalpurush","Hind Siliguri",system-ui,sans-serif}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{font:17px/1.75 var(--f-b);color:var(--ink);background:#fff}
-h1,h2,h3{font-family:var(--f-h);line-height:1.3;color:var(--navy)}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--red);outline-offset:2px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-section{padding:56px 0;border-top:1px solid var(--line)}
-h2{font-size:clamp(24px,3.6vw,32px);margin-bottom:6px}
-.sub{color:var(--muted);margin-bottom:24px;max-width:62ch}
-.btn{display:inline-block;padding:11px 20px;border-radius:4px;font:600 16px var(--f-b);text-decoration:none;border:2px solid var(--red);background:var(--red);color:#fff;cursor:pointer}
-.btn.alt{background:transparent;color:var(--navy);border-color:var(--navy)}
-.btn.on-dark{background:transparent;color:#fff;border-color:#fff}
-.bar{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:58px}
-.brand{font:800 18px var(--f-h);color:var(--navy);text-decoration:none}
-.bar nav a{margin-right:18px;text-decoration:none;font-size:15px;color:var(--muted)}
-.bar nav a:hover{color:var(--navy)}
+  :root{
+    --green:#0b3d2e; --green-2:#0e4d3a; --gold:#f5b301; --gold-soft:#fdf3d0;
+    --ink:#1d1d1a; --muted:#5b5b55; --line:#e4e0d4; --bg:#faf8f2; --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Hind Siliguri","Noto Sans Bengali",system-ui,sans-serif;
+    font-size:17px;line-height:1.85}
+  a{color:var(--green-2)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
 
+  /* উপরের ছোট বার */
+  .topbar{background:var(--green);color:#dcefe6;font-size:14.5px}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+  .topbar a{color:#fff;text-decoration:none;font-weight:600}
 
-.hero{background:var(--navy);color:#fff;padding:60px 0}
-.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start}
-@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}}
-.hero h1{color:#fff;font-size:clamp(30px,5vw,46px);margin-bottom:14px}
-.hero p{max-width:50ch;color:#d5dcea;margin-bottom:22px}
-.row{display:flex;flex-wrap:wrap;gap:10px}
-.contact{border-left:3px solid var(--red);padding:4px 0 4px 22px;color:#d5dcea;font-size:16px}
-.contact b{color:#fff;display:block;margin-top:10px}
-.contact b:first-child{margin-top:0}
+  /* হেডার */
+  header.site{background:#fff;border-bottom:1px solid var(--line)}
+  header.site .wrap{display:flex;align-items:center;gap:14px;padding-top:16px;padding-bottom:16px}
+  .mark{width:52px;height:52px;flex:0 0 52px;background:var(--green);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:19px;border-radius:10px;letter-spacing:.5px}
+  header.site h1{font-size:22px;line-height:1.35;margin:0}
+  header.site p{margin:2px 0 0;color:var(--muted);font-size:14.5px}
+  .head-cta{margin-left:auto;white-space:nowrap}
+  .btn{display:inline-block;padding:11px 20px;border-radius:9px;text-decoration:none;font-weight:700;font-size:16px;border:1px solid transparent;cursor:pointer}
+  .btn-gold{background:var(--gold);color:#1d1d1a}
+  .btn-gold:hover{background:#e5a800}
+  .btn-line{background:transparent;color:var(--green);border-color:var(--green)}
+  .btn-line:hover{background:#eef4ef}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-green:hover{background:var(--green-2)}
 
-table{width:100%;border-collapse:collapse;font-size:16.5px}
-th,td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-family:var(--f-h);color:var(--navy);border-bottom:2px solid var(--navy)}
-td.n{text-align:right;white-space:nowrap;font-weight:600}
-th.n{text-align:right}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-@media(max-width:760px){.two{grid-template-columns:1fr}}
-.tabs{display:flex;gap:0;margin-bottom:18px}
-.tabs button{flex:0 0 auto;padding:10px 22px;font:600 16px var(--f-b);border:1px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer}
-.tabs button[aria-selected=true]{background:var(--navy);color:#fff}
-.tabs button+button{border-left:0}
-.fee{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
-@media(max-width:820px){.fee{grid-template-columns:1fr}}
-.side{background:var(--soft);padding:22px;border-radius:4px}
-.side h3{font-size:19px;margin-bottom:8px}
-.side p{font-size:16px;color:var(--muted);margin-bottom:14px}
-.side select{width:100%;padding:11px;border:1px solid var(--line);border-radius:4px;font:16px var(--f-b);margin-bottom:12px;background:#fff}
-dl{display:grid;grid-template-columns:230px 1fr;gap:0}
-dt,dd{padding:12px 0;border-bottom:1px solid var(--line)}
-dt{font-weight:600;color:var(--navy);padding-right:16px}
-dd{color:var(--ink)}
-@media(max-width:700px){dl{grid-template-columns:1fr}dt{border:0;padding-bottom:0}}
-.teacher{margin-top:36px;border:2px solid var(--red);padding:24px;border-radius:4px}
-.teacher h3{color:var(--red);font-size:22px;margin-bottom:6px}
-ol.flow{padding-left:22px;max-width:70ch}
-ol.flow li{margin-bottom:10px;padding-left:6px}
-ul.plain{padding-left:20px;columns:2;column-gap:40px}
-@media(max-width:700px){ul.plain{columns:1}}
-ul.plain li{margin-bottom:6px}
-.faqtabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.faqtabs button{padding:7px 14px;border:1px solid var(--line);background:#fff;border-radius:20px;font:500 15px var(--f-b);cursor:pointer;color:var(--muted)}
-.faqtabs button[aria-pressed=true]{border-color:var(--navy);color:var(--navy);background:var(--soft)}
-details{border-bottom:1px solid var(--line);padding:14px 0}
-summary{cursor:pointer;font-weight:600;color:var(--navy)}
-details p{margin-top:8px;color:var(--ink);max-width:70ch;white-space:pre-line}
-label{display:block;font-weight:600;margin:14px 0 5px}
-input,select.f{width:100%;padding:11px;border:1px solid #aab3bd;border-radius:4px;font:17px var(--f-b)}
-.form{max-width:560px}
-.ok{display:none;margin-top:16px;padding:14px;background:var(--soft);border-left:3px solid var(--navy)}
-footer{background:#0e1c36;color:#bcc6d8;padding:36px 0;font-size:15.5px}
-footer a{color:#fff}
+  /* হিরো — বাম দিকে লেখা, সাদামাটা */
+  .hero{background:var(--green);color:#fff}
+  .hero .wrap{padding-top:52px;padding-bottom:56px}
+  .badge{display:inline-block;background:var(--gold);color:#1d1d1a;font-weight:700;font-size:14.5px;
+    padding:5px 13px;border-radius:999px;margin-bottom:16px}
+  .hero h2{font-size:38px;line-height:1.45;margin:0 0 12px;max-width:640px}
+  .hero p.lead{color:#d6e8de;font-size:18px;line-height:1.8;margin:0 0 26px;max-width:620px}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .hero .btn-line{color:#fff;border-color:rgba(255,255,255,.55)}
+  .hero .btn-line:hover{background:rgba(255,255,255,.12)}
+  .hero .note{margin-top:20px;color:#bcd8c9;font-size:14.5px}
 
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  main section{padding:44px 0 8px}
+  h2.sec{font-size:26px;line-height:1.5;margin:0 0 6px;color:var(--green)}
+  p.sub{color:var(--muted);margin:0 0 22px;max-width:680px}
+  .rule{width:56px;height:4px;background:var(--gold);border-radius:4px;margin:0 0 22px}
 
-html{scroll-padding-top:110px;-webkit-text-size-adjust:100%}
-body{overflow-x:hidden}
-footer,td,dd,summary,.contact{overflow-wrap:anywhere}
-.dock{position:fixed;right:14px;bottom:14px;z-index:20;display:flex;gap:8px}
-.dock a{background:#1f9d55;color:#fff;border-radius:4px;padding:11px 18px;font-weight:600;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.25)}
-.dock a.call{display:none}
-input,select{min-height:48px}
-summary{min-height:44px}
-@media(max-width:820px){
-  .bar .wrap{flex-wrap:wrap;row-gap:0;padding-top:8px}
-  .bar nav{order:3;width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;padding:6px 0 8px;scrollbar-width:none}
-  .bar nav::-webkit-scrollbar{display:none}
-  .bar nav a{display:inline-block;padding:8px 14px 8px 0;margin-right:6px;font-size:16px}
-}
-@media(max-width:700px){
-  body{font-size:16.5px;padding-bottom:calc(66px + env(safe-area-inset-bottom))}
-  .wrap{padding:0 16px}
-  section{padding:40px 0}
-  .hero{padding:36px 0 40px}
-  .hero .wrap{gap:28px}
-  .hero .row{flex-direction:column}
-  .hero .btn{text-align:center;padding:14px 20px}
-  .contact{padding-left:16px}
-  .brand{font-size:17px}
-  .bar .btn{display:none}
-  .tabs{width:100%}
-  .tabs button{flex:1;padding:12px 8px}
-  th,td{padding:10px 6px;font-size:15.5px}
-  .side{padding:18px}
-  .teacher{padding:18px 16px}
-  .faqtabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-right:-16px;padding-right:16px;scrollbar-width:none}
-  .faqtabs::-webkit-scrollbar{display:none}
-  .faqtabs button{white-space:nowrap;padding:10px 16px;font-size:16px}
-  details{padding:6px 0}
-  summary{padding:10px 0}
-  .form .btn{width:100%;padding:14px}
-  .dock{left:0;right:0;bottom:0;gap:0;padding-bottom:env(safe-area-inset-bottom);background:#fff;border-top:1px solid var(--line);box-shadow:0 -2px 10px rgba(0,0,0,.1)}
-  .dock a{flex:1;text-align:center;border-radius:0;box-shadow:none;padding:16px 8px;font-size:17px}
-  .dock a.call{display:block;background:var(--navy)}
-}
+  /* তিনটা সুবিধা */
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .card .no{font-size:13px;font-weight:700;letter-spacing:1px;color:#9a8a3a;text-transform:uppercase}
+  .card h3{font-size:19px;line-height:1.55;margin:8px 0 6px;color:var(--green)}
+  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.8}
+
+  /* ফি টেবিল */
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:16px}
+  tr:last-child th,tr:last-child td{border-bottom:0}
+  th{background:var(--green);color:#fff;font-size:15px}
+  td.fee{font-weight:700;color:var(--green);white-space:nowrap}
+  .tbl-note{font-size:14.5px;color:var(--muted);margin-top:10px}
+  h3.tbl-title{font-size:19px;margin:28px 0 12px;color:var(--green)}
+  h3.tbl-title:first-of-type{margin-top:0}
+
+  /* ধাপ */
+  .steps{list-style:none;margin:0;padding:0;counter-reset:step}
+  .steps li{counter-increment:step;display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .steps li:last-child{border-bottom:0}
+  .steps li::before{content:counter(step, bengali);flex:0 0 40px;height:40px;background:var(--gold-soft);
+    border:1px solid #ead98a;color:#7a6410;font-weight:700;font-size:19px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center}
+  .steps strong{display:block;font-size:17.5px;color:var(--green)}
+  .steps span{color:var(--muted);font-size:15.5px}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .two ul{margin:0;padding-left:20px;color:var(--muted)}
+  .two li{margin-bottom:8px}
+  .two h3{margin-top:0;color:var(--green);font-size:19px}
+
+  /* ফর্ম */
+  .form-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px}
+  .form-box h2{margin-top:0}
+  label{display:block;font-weight:600;margin:16px 0 6px}
+  input,select,textarea{width:100%;padding:12px 14px;border:1px solid #cfc9b8;border-radius:9px;
+    font:inherit;font-size:16px;background:#fffdf7}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-box button{margin-top:22px;width:100%;padding:14px;font:inherit;font-weight:700;font-size:17px}
+  .form-alt{text-align:center;color:var(--muted);margin:18px 0 0;font-size:15.5px}
+
+  /* FAQ */
+  details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+  summary{font-weight:700;color:var(--green);cursor:pointer;font-size:17px}
+  details p{margin:10px 0 0;color:var(--muted)}
+
+  footer{background:var(--green);color:#cfe6d8;margin-top:56px}
+  footer .wrap{padding-top:36px;padding-bottom:36px;text-align:center}
+  footer strong{color:#fff;font-size:19px}
+  footer p{margin:8px 0;font-size:15.5px}
+  footer small{color:#9dbfb0}
+
+  @media (max-width:720px){
+    body{font-size:16px}
+    .hero h2{font-size:29px}
+    .cols,.two,.row{grid-template-columns:1fr}
+    .head-cta{display:none}
+    header.site h1{font-size:19px}
+    .form-box{padding:22px 18px}
+    td.fee{white-space:normal}
+  }
 </style>
 </head>
 <body>
 
-<div class="bar"><div class="wrap">
-  <a class="brand" href="#">ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়</a>
-  <nav><a href="#programs">প্রোগ্রাম</a><a href="#fees">খরচ</a><a href="#waiver">ওয়েভার</a><a href="#apply-how">আবেদন</a><a href="#faq">প্রশ্নোত্তর</a><a href="#contact">যোগাযোগ</a></nav>
-  <a class="btn" style="padding:7px 14px;font-size:15px" data-tel href="#">কল করুন</a>
-</div></div>
-
-<div class="hero"><div class="wrap">
-  <div>
-    <h1>স্প্রিং ২০২৭ ভর্তি চলছে</h1>
-    <p>কোন বিভাগে কত খরচ, কারা ওয়েভার পাবেন, কীভাবে আবেদন করবেন, সবকিছু এই পেজে পাবেন। বাকি প্রশ্নের উত্তর দেবে আমাদের ভর্তি টিম।</p>
-    <div class="row">
-      <a class="btn" href="https://www.uob.edu.bd/" target="_blank" rel="noopener">অনলাইনে আবেদন করুন</a>
-      <a class="btn on-dark" data-wa href="#">WhatsApp-এ প্রশ্ন করুন</a>
-    </div>
+<div class="topbar">
+  <div class="wrap">
+    <span>স্প্রিং ২০২৭ — ভর্তি চলছে</span>
+    <span>হেল্পলাইন: <a href="tel:01313430064">০১৩১৩-৪৩০০৬৪</a></span>
   </div>
-  <div class="contact">
-    <b>ভর্তি হেল্পলাইন</b><a data-tel href="#" id="hTel">০১৩১৩-৪৩০০৬৪</a>
-    <b>ঠিকানা</b>১০২০/১৫ বাইপাস রোড, দাতিয়ারা, সিজেএম কোর্ট/এলজিইডি অফিসের পাশে, ব্রাহ্মণবাড়িয়া-৩৪০০
-    <b>ওয়েবসাইট</b>www.uob.edu.bd
-  </div>
-</div></div>
+</div>
 
-<section id="programs"><div class="wrap">
-  <h2>কোন কোন প্রোগ্রামে ভর্তি হওয়া যায়</h2>
-  <p class="sub">স্নাতক ও স্নাতকোত্তর, দুই স্তরেই ভর্তি চলছে।</p>
-  <div class="two">
-    <div><h3 style="margin-bottom:8px">স্নাতক</h3>
-      <ul class="plain" style="columns:1"><li>LLB</li><li>B.Sc. in CSE</li><li>B.Sc. in EEE</li><li>BBA</li><li>BSS (Hons.) in Sociology</li><li>BA (Hons.) in English</li></ul>
-      <p class="sub" style="margin-top:12px;font-size:15.5px">স্নাতক প্রোগ্রামে ক্রেডিট লাগে ১৩০ থেকে ১৪৮, প্রোগ্রাম অনুযায়ী। মেয়াদ ও ক্লাসের সময়সূচি সংশ্লিষ্ট বিভাগ জানাবে।</p></div>
-    <div><h3 style="margin-bottom:8px">স্নাতকোত্তর</h3>
-      <ul class="plain" style="columns:1"><li>MBA (মার্কেটিং, ফিন্যান্স, অ্যাকাউন্টিং, ব্যাংকিং, HRM)</li><li>MA in English Literature &amp; ELT</li><li>MSS in Sociology</li><li>PGD in Library &amp; Information Science</li></ul></div>
-  </div>
-</div></section>
-
-<section id="fees"><div class="wrap">
-  <h2>আনুমানিক মোট খরচ (স্প্রিং ২০২৭)</h2>
-  <p class="sub">নিচের অঙ্কগুলো ওয়েভার ছাড়ার আগের আনুমানিক মোট খরচ। আপনি কত ছাড় পাবেন তা ভর্তি টিম আপনার তথ্য দেখে নিশ্চিত করবে।</p>
-  <div class="fee">
+<header class="site">
+  <div class="wrap">
+    <div class="mark">UOB</div>
     <div>
-      <div class="tabs" role="tablist">
-        <button role="tab" aria-selected="true" data-lvl="ug">স্নাতক</button><button role="tab" aria-selected="false" data-lvl="pg">স্নাতকোত্তর</button>
+      <h1>ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়</h1>
+      <p>University of Brahmanbaria</p>
+    </div>
+    <div class="head-cta">
+      <a class="btn btn-gold" href="https://admission.uob.edu.bd/">আবেদন করুন</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">স্প্রিং ২০২৭ ভর্তি চলছে</span>
+    <h2>ভর্তির সব তথ্য এক জায়গায় — ফি, প্রোগ্রাম আর আবেদনের নিয়ম।</h2>
+    <p class="lead">কোন প্রোগ্রামে কত খরচ, কী কাগজ লাগবে, কীভাবে আবেদন করবেন — এই পাতায় সব লেখা আছে। আবেদন করবেন বিশ্ববিদ্যালয়ের অফিসিয়াল পোর্টালে, আর কিছু জানতে চাইলে নিচের ফর্মটা পূরণ করুন।</p>
+    <div class="actions">
+      <a class="btn btn-gold" href="https://admission.uob.edu.bd/">অনলাইনে আবেদন করুন</a>
+      <a class="btn btn-line" href="tel:01313430064">ফোন করুন</a>
+    </div>
+    <p class="note">আবেদন করবেন অফিসিয়াল পোর্টালে — admission.uob.edu.bd। ভর্তি সংক্রান্ত চূড়ান্ত তথ্যের জন্য Admission Office-এর সঙ্গে মিলিয়ে নিন।</p>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section>
+    <h2 class="sec">এখানে ভর্তি হলে কী পাবেন</h2>
+    <div class="rule"></div>
+    <div class="cols">
+      <div class="card">
+        <div class="no">সুবিধা ০১</div>
+        <h3>মায়েদের জন্য ডে কেয়ার</h3>
+        <p>নারী শিক্ষার্থীরা যাতে নিশ্চিন্তে ক্লাস করতে পারেন, ক্যাম্পাসে আছে আধুনিক ডে কেয়ার সেন্টার। পড়াশোনা আর মাতৃত্ব — দুটোই একসাথে চলবে।</p>
       </div>
-      <table><thead><tr><th>প্রোগ্রাম</th><th id="thDur" class="n" style="display:none">মেয়াদ</th><th class="n">মোট খরচ</th></tr></thead><tbody id="feeBody"></tbody></table>
+      <div class="card">
+        <div class="no">সুবিধা ০২</div>
+        <h3>শিক্ষকদের জন্য ৭০% পর্যন্ত ছাড়</h3>
+        <p>প্রাথমিক, মাধ্যমিক, কলেজ ও মাদ্রাসায় কর্মরত শিক্ষকদের মাস্টার্স প্রোগ্রামে (MBA, MA, MSS) টিউশন ফিতে ৭০% পর্যন্ত ছাড়, আর ক্লাস শুক্র-শনিবার।</p>
+      </div>
+      <div class="card">
+        <div class="no">সুবিধা ০৩</div>
+        <h3>স্কলারশিপ আর IELTS প্রস্তুতি</h3>
+        <p>SSC ও HSC ফলাফলের ওপর স্কলারশিপের সুযোগ আছে। সাথে ব্রিটিশ কাউন্সিল-সার্টিফাইড শিক্ষকদের পরিচালনায় IELTS প্রস্তুতি কোর্স।</p>
+      </div>
     </div>
-    <div class="side">
-      <h3>আমার জন্য কত পড়বে?</h3>
-      <p>প্রোগ্রাম বেছে নিন। আপনার ফলাফল ও ওয়েভার বিবেচনায় প্রকৃত খরচ আমাদের ভর্তি টিম জানিয়ে দেবে।</p>
-      <label for="pick" style="margin-top:0">প্রোগ্রাম</label>
-      <select id="pick"></select>
-      <a class="btn" id="askWa" data-wa href="#" style="display:block;text-align:center">ভর্তি টিমকে জিজ্ঞেস করুন</a>
+  </section>
+
+  <section>
+    <h2 class="sec">প্রোগ্রাম আর মোট ফি</h2>
+    <div class="rule"></div>
+    <p class="sub">নিচের ফিগুলো পুরো প্রোগ্রামের মোট খরচ। ভর্তির সময় ছাড় বা কিস্তির নিয়ম জানতে Admission Office-এ যোগাযোগ করুন।</p>
+
+    <h3 class="tbl-title">আন্ডারগ্রাজুয়েট প্রোগ্রাম</h3>
+    <table>
+      <tr><th>প্রোগ্রাম</th><th>মোট ফি</th></tr>
+      <tr><td>LLB (অনার্স)</td><td class="fee">৩,১৬,৪০০ টাকা</td></tr>
+      <tr><td>B.Sc. in CSE</td><td class="fee">৩,১৬,০০০ টাকা</td></tr>
+      <tr><td>B.Sc. in EEE</td><td class="fee">৩,১২,৬০০ টাকা</td></tr>
+      <tr><td>BBA</td><td class="fee">২,৬৬,৯০০ টাকা</td></tr>
+      <tr><td>BA (Hons.) in English</td><td class="fee">২,৪৭,৬০০ টাকা</td></tr>
+      <tr><td>BSS (Hons.) in Sociology</td><td class="fee">১,৯০,৪০০ টাকা</td></tr>
+    </table>
+
+    <h3 class="tbl-title">গ্রাজুয়েট ও অন্যান্য প্রোগ্রাম</h3>
+    <table>
+      <tr><th>প্রোগ্রাম</th><th>মোট ফি</th></tr>
+      <tr><td>MBA (২ বছর / ১ বছর)</td><td class="fee">৯২,১০০ – ১,৪৭,৭০০ টাকা</td></tr>
+      <tr><td>MA in English Literature &amp; ELT</td><td class="fee">৮০,৭০০ – ১,১৩,৩০০ টাকা</td></tr>
+      <tr><td>MSS in Sociology</td><td class="fee">৬৫,৯০০ – ৯৮,৭০০ টাকা</td></tr>
+      <tr><td>PGD in Library &amp; Information Science</td><td class="fee">৪১,১০০ টাকা</td></tr>
+      <tr><td>IELTS Course (UOB Students)</td><td class="fee">৮,০০০ টাকা</td></tr>
+    </table>
+    <p class="tbl-note">ফি আর ছাড়ের শর্ত সময়ের সঙ্গে বদলাতে পারে — ভর্তির আগে অফিস থেকে জেনে নেওয়াই ভালো।</p>
+  </section>
+
+  <section>
+    <h2 class="sec">আবেদন করবেন যেভাবে</h2>
+    <div class="rule"></div>
+    <ol class="steps">
+      <li><div><strong>অনলাইনে আবেদন করুন</strong><span>admission.uob.edu.bd-তে গিয়ে আবেদন করুন, অথবা Admission Office থেকে সরাসরি ফর্ম নিন।</span></div></li>
+      <li><div><strong>তথ্য যাচাই</strong><span>আপনার SSC ও HSC-এর তথ্য আর কাগজপত্র যাচাই করা হবে।</span></div></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="two">
+      <div class="card">
+        <h3>কী কী কাগজ লাগবে</h3>
+        <ul>
+          <li>সব বোর্ড মার্কশিট আর টেস্টিমোনিয়াল / সার্টিফিকেটের সত্যায়িত ফটোকপি</li>
+          <li>সাম্প্রতিক রঙিন পাসপোর্ট সাইজ ছবি — ৩ কপি</li>
+          <li>O-Level / A-Level হলে সার্টিফিকেট আর A2 Statement of Entry-র সত্যায়িত কপি</li>
+          <li>মুক্তিযোদ্ধা কোটা হলে মন্ত্রণালয়ের সার্টিফিকেট আর গেজেটের সত্যায়িত কপি</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>কে আবেদন করতে পারবে</h3>
+        <ul>
+          <li>CSE ও EEE: SSC + HSC মিলিয়ে GPA ৫ (দুটোতেই কমপক্ষে ২.৫), অথবা মোট ৬.০০ (একটায় কমপক্ষে ২.০০) — শুধু বিজ্ঞান ব্যাকগ্রাউন্ড</li>
+          <li>BBA, BA English, BSS Sociology: একই GPA নিয়ম — যেকোনো ব্যাকগ্রাউন্ড থেকে আবেদন করা যায়</li>
+          <li>MBA (রেগুলার): ৩ বছরের ব্যাচেলর ডিগ্রি, SSC + HSC-তে কমপক্ষে GPA ২.৫ আর ব্যাচেলরে CGPA ২.৫</li>
+        </ul>
+        <p style="margin:10px 0 0">সূত্র: admission.uob.edu.bd — Admission Requirements। বিস্তারিত সেখানেই দেখে নিন, অথবা অফিসে ফোন করুন — <a href="tel:01313430064">০১৩১৩-৪৩০০৬৪</a></p>
+      </div>
     </div>
+  </section>
+
+  <section id="apply">
+    <div class="form-box">
+      <h2 class="sec">জানতে চান? লিখে পাঠান</h2>
+      <p class="sub">নাম আর ফোন নম্বর দিন — Admission টিম আপনার সঙ্গে যোগাযোগ করবে।</p>
+      <form id="inquiry-form">
+        <label for="name">আপনার নাম *</label>
+        <input id="name" name="name" type="text" required placeholder="আপনার পুরো নাম লিখুন">
+
+        <div class="row">
+          <div>
+            <label for="phone">মোবাইল / WhatsApp নম্বর *</label>
+            <input id="phone" name="phone" type="tel" required placeholder="017xxxxxxxx">
+          </div>
+          <div>
+            <label for="program">পছন্দের প্রোগ্রাম *</label>
+            <select id="program" name="program" required>
+              <option value="">— বেছে নিন —</option>
+              <option>LLB (অনার্স)</option>
+              <option>B.Sc. in CSE</option>
+              <option>B.Sc. in EEE</option>
+              <option>BBA</option>
+              <option>BA (Hons.) in English</option>
+              <option>BSS (Hons.) in Sociology</option>
+              <option>MBA / Masters</option>
+              <option>IELTS Preparation</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="ssc">SSC ফলাফল (GPA)</label>
+            <input id="ssc" name="ssc" type="text" placeholder="যেমন: 5.00">
+          </div>
+          <div>
+            <label for="hsc">HSC ফলাফল (GPA)</label>
+            <input id="hsc" name="hsc" type="text" placeholder="যেমন: 4.50">
+          </div>
+        </div>
+
+        <label for="honours">অনার্স / ব্যাচেলর ফলাফল (CGPA) — শুধু MBA / Masters আবেদনকারীদের জন্য</label>
+        <input id="honours" name="honours" type="text" placeholder="যেমন: CGPA 3.25">
+
+        <label for="message">আপনার প্রশ্ন থাকলে লিখুন</label>
+        <textarea id="message" name="message" rows="3" placeholder="ফি, স্কলারশিপ, ডে কেয়ার — যা জানতে চান লিখুন..."></textarea>
+
+        <button class="btn btn-green" type="submit">WhatsApp-এ পাঠান</button>
+        <p style="text-align:center;color:var(--muted);font-size:14.5px;margin:14px 0 0">জমা দিলে আপনার মেসেজটি ওয়েবসাইটে জমা হবে, আর WhatsApp-ও খুলবে — ওখানে Send চাপলেই হবে।</p>
+        <p id="form-status" style="text-align:center;font-size:15px;margin:10px 0 0;color:var(--green);font-weight:600"></p>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec">যা সবাই জিজ্ঞেস করে</h2>
+    <div class="rule"></div>
+    <details>
+      <summary>ভর্তির শেষ তারিখ কবে?</summary>
+      <p>শেষ তারিখ Admission Office থেকে জেনে নিন — আসন সীমিত, তাই দেরি না করাই ভালো।</p>
+    </details>
+    <details>
+      <summary>ফি কি একবারে দিতে হবে, না কিস্তিতে দেওয়া যায়?</summary>
+      <p>কিস্তি আর ছাড়ের নিয়ম প্রোগ্রাম অনুযায়ী আলাদা। অফিসে ফোন করলে সঠিকটা জানিয়ে দেবে।</p>
+    </details>
+    <details>
+      <summary>ক্লাস কবে থেকে শুরু?</summary>
+      <p>ভর্তি নিশ্চিত হওয়ার পর ক্লাস শুরুর তারিখ জানিয়ে দেওয়া হবে।</p>
+    </details>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়</strong>
+    <p>১০২০/১৫ বাইপাস রোড, ডাটিয়ারা, সিজেএম কোর্ট / এলজিইডি অফিসের পাশে, ব্রাহ্মণবাড়িয়া-৩৪০০</p>
+    <p>হেল্পলাইন: <a href="tel:01313430064" style="color:#fff">০১৩১৩-৪৩০০৬৪</a> &nbsp;|&nbsp; ইমেইল: admission@uob.edu.bd &nbsp;|&nbsp; <a href="https://uob.edu.bd/" style="color:#fff">uob.edu.bd</a></p>
+    <p><small>© ২০২৭ ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়। সর্বস্বত্ব সংরক্ষিত।</small></p>
   </div>
-</div></section>
-
-<section id="waiver"><div class="wrap">
-  <h2>ওয়েভার ও বিশেষ সুবিধা</h2>
-  <p class="sub">যোগ্যতা ও শর্ত ভর্তি টিম নিশ্চিত করবে। আপনার প্রোগ্রাম ও ফলাফল জানালেই তারা সঠিক ক্যাটেগরি বলে দেবে।</p>
-  <dl>
-    <dt>টিউশন ফি ওয়েভার ১০% – ১০০%</dt><dd>নারী শিক্ষার্থী, শারীরিক প্রতিবন্ধী শিক্ষার্থী, মুক্তিযোদ্ধা কোটার আবেদনকারী এবং যোগ্য কর্পোরেট বা গ্রুপ আবেদনকারী।</dd>
-    <dt>ফলাফলভিত্তিক স্কলারশিপ</dt><dd>SSC, HSC ও ডিপ্লোমা যোগ্যতার ফলাফলের ভিত্তিতে।</dd>
-    <dt>ডিপ্লোমা হোল্ডার (CSE, EEE)</dt><dd>কম্পিউটার সায়েন্স ও ইলেকট্রিক্যাল অ্যান্ড ইলেকট্রনিক ইঞ্জিনিয়ারিং ডিপ্লোমাধারীদের জন্য বিশেষ ওয়েভার।</dd>
-  </dl>
-  <div class="teacher">
-    <h3>শিক্ষকদের জন্য মাস্টার্সে ৭০% পর্যন্ত ওয়েভার</h3>
-    <p style="margin-bottom:14px">সরকারি ও বেসরকারি প্রাথমিক, মাধ্যমিক, উচ্চ মাধ্যমিক বিদ্যালয়, কলেজ ও মাদ্রাসার শিক্ষকরা আবেদন করতে পারবেন। কিস্তিতে ফি দেওয়ার সুযোগ আছে। আবেদনের সময় প্রতিষ্ঠানের আইডি কার্ড বা নিয়োগপত্র এবং শিক্ষাগত সনদ জমা দিতে হবে।</p>
-    <table><thead><tr><th>প্রোগ্রাম</th><th class="n">ওয়েভারের পর মোট খরচ</th></tr></thead><tbody id="tBody"></tbody></table>
-    <p style="margin-top:14px;font-size:15.5px;color:var(--muted)">ক্লাস এমনভাবে সাজানো হয় যাতে শিক্ষকদের নিজের কাজের ক্ষতি না হয়। সাপ্তাহিক ছুটি শুক্র ও শনিবার। শর্ত প্রযোজ্য।</p>
-  </div>
-</div></section>
-
-<section id="apply-how"><div class="wrap">
-  <h2>আবেদন করবেন যেভাবে</h2>
-  <ol class="flow">
-    <li><b>আবেদন জমা দিন।</b> ভর্তি অফিস থেকে ফর্ম সংগ্রহ করে আবেদন করুন।</li>
-    <li><b>ভর্তি টিমের সাথে কথা বলুন।</b> প্রোগ্রাম, ওয়েভার ও প্রয়োজনীয় কাগজপত্র নিশ্চিত করুন। নিচের ফর্ম পূরণ করলে বা হেল্পলাইনে ফোন করলেই হবে।</li>
-    <li><b>ভর্তি টিমের নির্দেশনা অনুযায়ী ভর্তি সম্পন্ন করুন।</b> সাহায্য লাগলে ফোন করুন: <a data-tel href="#">০১৩১৩-৪৩০০৬৪</a>।</li>
-  </ol>
-</div></section>
-
-<section><div class="wrap">
-  <h2>ক্যাম্পাসের সুযোগ-সুবিধা</h2>
-  <p class="sub">&nbsp;</p>
-  <ul class="plain"><li>লাইব্রেরি</li><li>EEE, ফিজিক্স, কেমিস্ট্রি ও কম্পিউটার ল্যাব</li><li>হাইব্রিড ও ব্লেন্ডেড লার্নিংয়ের জন্য স্মার্ট ডিজিটাল ক্লাসরুম</li><li>নির্ভরযোগ্য ইন্টারনেট সংযোগ</li><li>রিমেডিয়াল ইংরেজি ক্লাস</li><li>দক্ষতা উন্নয়নের সুযোগ</li></ul>
-</div></section>
-
-<section id="faq"><div class="wrap">
-  <h2>সচরাচর প্রশ্ন</h2>
-  <p class="sub">ফেসবুক ইনবক্সে সবচেয়ে বেশি আসা প্রশ্নের উত্তর।</p>
-  <div class="faqtabs" id="faqTabs"></div>
-  <div id="faqList"></div>
-</div></section>
-
-<section id="contact"><div class="wrap">
-  <h2>আপনার তথ্য পাঠান, আমরা ফোন করব</h2>
-  <p class="sub">নাম ও নম্বর দিন। ভর্তি টিম আপনার সাথে যোগাযোগ করবে।</p>
-  <form class="form" id="lead">
-    <label for="name">আপনার নাম</label><input id="name" required autocomplete="name">
-    <label for="phone">মোবাইল নম্বর</label><input id="phone" type="tel" required pattern="01[0-9]{9}" placeholder="01XXXXXXXXX" autocomplete="tel">
-    <label for="lprog">আগ্রহের প্রোগ্রাম</label><select class="f" id="lprog"></select>
-    <label for="exam">শেষ পাস করা পরীক্ষা</label>
-    <select class="f" id="exam"><option>SSC / সমমান</option><option>HSC / সমমান</option><option>ডিপ্লোমা</option><option>স্নাতক</option><option>অন্যান্য</option></select>
-    <p style="margin-top:20px"><button class="btn" type="submit">তথ্য পাঠান</button></p>
-    <div class="ok" id="ok" role="status">ধন্যবাদ! আপনার তথ্য পেয়েছি। ভর্তি টিম শীঘ্রই আপনাকে ফোন করবে।</div>
-  </form>
-</div></section>
-
-<footer><div class="wrap">
-  <b style="color:#fff">ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়</b><br>
-  ১০২০/১৫ বাইপাস রোড, দাতিয়ারা, সিজেএম কোর্ট/এলজিইডি অফিসের পাশে, ব্রাহ্মণবাড়িয়া-৩৪০০<br>
-  ভর্তি হেল্পলাইন: ০১৩১৩-৪৩০০৬৪ · রেজিস্ট্রার অফিস: ০১৩১৩-৪৩০০৬৩<br>
-  <a href="mailto:admission@uob.edu.bd">admission@uob.edu.bd</a> · <a href="https://www.uob.edu.bd/" target="_blank" rel="noopener">www.uob.edu.bd</a> · <a id="fb" href="#" target="_blank" rel="noopener">ফেসবুক পেজ</a>
-</div></footer>
-
-<div class="dock"><a class="call" data-tel href="#">কল করুন</a><a data-wa href="#">WhatsApp</a></div>
+</footer>
 
 <script>
-/* ===== বদলানোর জায়গা ===== */
-const CFG={
-  tel:"01313430064",
-  whatsapp:"8801313430064",   // দেশের কোডসহ; আলাদা WhatsApp নম্বর থাকলে বদলান
-  facebook:"https://facebook.com/your-page",
-  sheetUrl:""                  // Google Apps Script Web App URL
-};
-const UG=[["LLB",316400],["CSE",316000],["EEE",312600],["BBA",266900],["Sociology (BSS Hons.)",190400],["English (BA Hons.)",247600]];
-const PG=[["MBA","১ বছর",92100],["MBA","২ বছর",147700],["MA English Literature & ELT","১ বছর",80700],["MA English Literature & ELT","১.৫ বছর",113300],["MSS Sociology","১ বছর",65900],["MSS Sociology","২ বছর",98700],["PGD Library & Information Science","১ বছর",41100]];
-const TCH=[["MBA (১ বছর)",27630],["MBA (২ বছর)",44310],["MA English Literature & ELT (১ বছর)",24210],["MA English Literature & ELT (১.৫ বছর)",33990],["MSS Sociology (১ বছর)",19770],["MSS Sociology (২ বছর)",29610]];
-const FAQ={
- "ভর্তি":[
-  ["এখন কি ভর্তি চলছে?","হ্যাঁ, স্প্রিং ২০২৭ ভর্তি চলছে। বিস্তারিত জানতে www.uob.edu.bd দেখুন অথবা ০১৩১৩-৪৩০০৬৪ নম্বরে ফোন করুন।"],
-  ["কীভাবে আবেদন করব?","www.uob.edu.bd-এ \"Apply Online\" অপশনে অনলাইনে আবেদন করতে পারবেন। অথবা ভর্তি অফিস থেকে ফর্ম সংগ্রহ করে অফলাইনে আবেদন করতে পারবেন। সহায়তার জন্য ফোন করুন ০১৩১৩-৪৩০০৬৪।"],
-  ["বিশ্ববিদ্যালয়টি কোথায়?","১০২০/১৫ বাইপাস রোড, দাতিয়ারা, সিজেএম কোর্ট/এলজিইডি অফিসের পাশে, ব্রাহ্মণবাড়িয়া-৩৪০০।"],
-  ["কোন কোন প্রোগ্রাম আছে?","স্নাতক: LLB, CSE, EEE, BBA, BSS (Hons.) Sociology ও BA (Hons.) English। স্নাতকোত্তর: MBA, MA in English Literature & ELT, MSS in Sociology ও PGD in Library & Information Science।"],
-  ["ভর্তি সম্পর্কে আরও জানতে চাই।","আপনি কোন প্রোগ্রামে আগ্রহী জানালে আমাদের টিম সেই অনুযায়ী ভর্তির তথ্য জানাবে।"],
-  ["ভর্তি অফিসের সাথে কীভাবে কথা বলব?","ব্যক্তিগত সহায়তার জন্য অফিস সময়ে ভর্তি হেল্পলাইন ০১৩১৩-৪৩০০৬৪ নম্বরে ফোন করুন।"]
- ],
- "খরচ ও ওয়েভার":[
-  ["স্নাতক প্রোগ্রামের আনুমানিক মোট খরচ কত?","স্প্রিং ২০২৭ ফি স্ট্রাকচার অনুযায়ী: LLB ৩,১৬,৪০০; CSE ৩,১৬,০০০; EEE ৩,১২,৬০০; Sociology ১,৯০,৪০০; English ২,৪৭,৬০০; BBA ২,৬৬,৯০০ টাকা।"],
-  ["স্নাতকোত্তর প্রোগ্রামের আনুমানিক মোট খরচ কত?","MBA (১ বছর) ৯২,১০০; MBA (২ বছর) ১,৪৭,৭০০; MA English (১ বছর) ৮০,৭০০; MA English (১.৫ বছর) ১,১৩,৩০০; MSS Sociology (১ বছর) ৬৫,৯০০; MSS Sociology (২ বছর) ৯৮,৭০০; PGD in LIS ৪১,১০০ টাকা।"],
-  ["স্কলারশিপ বা টিউশন ফি ওয়েভার আছে?","হ্যাঁ। নারী শিক্ষার্থী, শারীরিক প্রতিবন্ধী শিক্ষার্থী, মুক্তিযোদ্ধা কোটার আবেদনকারী এবং যোগ্য কর্পোরেট বা গ্রুপ আবেদনকারীদের জন্য ১০% থেকে ১০০% পর্যন্ত বিশেষ ওয়েভার আছে। যোগ্যতা ও শর্ত বিশ্ববিদ্যালয় থেকে নিশ্চিত করে নিতে হবে।"],
-  ["ফলাফলের ভিত্তিতে কি স্কলারশিপ আছে?","হ্যাঁ। SSC, HSC ও ডিপ্লোমা ফলাফলের ভিত্তিতে স্কলারশিপ দেওয়া হয়।"],
-  ["আমার স্কলারশিপ যোগ্যতা জানতে চাই।","আপনার প্রোগ্রাম এবং SSC, HSC বা ডিপ্লোমার ফলাফল জানালে আমাদের ভর্তি টিম সঠিক স্কলারশিপ বা ওয়েভার ক্যাটেগরি জানিয়ে দেবে।"],
-  ["CSE ও EEE ডিপ্লোমাধারীদের জন্য কি বিশেষ ওয়েভার আছে?","হ্যাঁ, CSE ও EEE ডিপ্লোমা গ্র্যাজুয়েটদের জন্য বিশেষ ওয়েভারের সুযোগ আছে।"]
- ],
- "শিক্ষকদের অফার":[
-  ["শিক্ষকদের জন্য কী বিশেষ অফার আছে?","নির্বাচিত মাস্টার্স প্রোগ্রামের মোট খরচে শিক্ষকদের জন্য ৭০% পর্যন্ত ওয়েভার আছে।"],
-  ["কারা এই অফারের যোগ্য?","সরকারি ও বেসরকারি প্রাথমিক বিদ্যালয়, মাধ্যমিক বিদ্যালয়, উচ্চ মাধ্যমিক প্রতিষ্ঠান, কলেজ ও মাদ্রাসার শিক্ষকরা।"],
-  ["কোন কোন প্রোগ্রামে এই অফার পাওয়া যায়?","MSS in Sociology, MA in English এবং MBA (অ্যাকাউন্টিং, ফিন্যান্স, ব্যাংকিং, মার্কেটিং ও HRM সহ)।"],
-  ["চাকরি করে কি পড়া যাবে?","হ্যাঁ। কর্মরত শিক্ষকরা যেন পেশাগত দায়িত্বের পাশাপাশি স্নাতকোত্তর পড়তে পারেন, সেই উদ্দেশ্যেই প্রোগ্রামটি সাজানো। সাপ্তাহিক ছুটি শুক্র ও শনিবার।"],
-  ["ফি কি কিস্তিতে দেওয়া যাবে?","হ্যাঁ, কিস্তিতে ফি পরিশোধের সুযোগ আছে।"],
-  ["আবেদনের জন্য কী কী কাগজ লাগবে?","প্রতিষ্ঠানের আইডি কার্ড বা নিয়োগপত্র এবং প্রয়োজনীয় শিক্ষাগত সনদ। বিস্তারিত জানতে ভর্তি অফিসে যোগাযোগ করুন।"],
-  ["অফার সম্পর্কে আরও জানতে কোথায় যোগাযোগ করব?","ভর্তি হেল্পলাইন: +৮৮০ ১৩১৩-৪৩০০৬৪, ইমেইল: admission@uob.edu.bd, ওয়েবসাইট: www.uob.edu.bd।"]
- ],
- "ক্যাম্পাস ও যোগাযোগ":[
-  ["স্নাতক প্রোগ্রামের মেয়াদ কত?","স্নাতক প্রোগ্রামে প্রোগ্রাম অনুযায়ী ১৩০ থেকে ১৪৮ ক্রেডিট লাগে। মেয়াদ ও একাডেমিক সময়সূচির জন্য সংশ্লিষ্ট বিভাগে যোগাযোগ করুন।"],
-  ["স্নাতকোত্তর প্রোগ্রামের মেয়াদ কত?","MBA ১ বা ২ বছর, MA in English Literature & ELT ১ বা ১.৫ বছর, MSS in Sociology ১ বা ২ বছর এবং PGD in Library & Information Science ১ বছর।"],
-  ["MBA কোন কোন বিষয়ে হয়?","মার্কেটিং, ফিন্যান্স, অ্যাকাউন্টিং, ব্যাংকিং এবং হিউম্যান রিসোর্স ম্যানেজমেন্ট (HRM)।"],
-  ["কী কী সুযোগ-সুবিধা আছে?","লাইব্রেরি, EEE, ফিজিক্স, কেমিস্ট্রি ও কম্পিউটার ল্যাব, স্মার্ট ডিজিটাল ক্লাসরুম, নির্ভরযোগ্য ইন্টারনেট, রিমেডিয়াল ইংরেজি ক্লাস এবং দক্ষতা উন্নয়নের সুযোগ।"],
-  ["কীভাবে যোগাযোগ করব?","ভর্তি হেল্পলাইন ০১৩১৩-৪৩০০৬৪, রেজিস্ট্রার অফিস ০১৩১৩-৪৩০০৬৩, ওয়েবসাইট www.uob.edu.bd, ঠিকানা ১০২০/১৫ বাইপাস রোড, দাতিয়ারা, ব্রাহ্মণবাড়িয়া-৩৪০০।"]
- ]
-};
-/* ======================== */
-const $=id=>document.getElementById(id);
-const bn=s=>String(s).replace(/\d/g,d=>"০১২৩৪৫৬৭৮৯"[d]);
-const tk=n=>"৳ "+bn(Number(n).toLocaleString("en-IN"));
+// Admission Hub — inquiry form: website-e save + WhatsApp, ek sathe.
+// ⚠️ REPLACE-ME: niche WORKER_URL-e tomar asol Worker URL bosao.
+//    Worker deploy korar pore Cloudflare je URL dibe (jemon
+//    https://uob-admission-hub.<tomar-subdomain>.workers.dev), oita
+//    ekhane bosate hobe. Na bosale website-e save hobe na,
+//    kintu WhatsApp tobuo khulbe.
+const WORKER_URL = 'https://uob-admission-hub.REPLACE-ME.workers.dev';
+const WHATSAPP_NUMBER = '8801313430064'; // Admission helpline (01313-430064)
 
-document.querySelectorAll("[data-tel]").forEach(a=>a.href="tel:"+CFG.tel);
-const wa=t=>"https://wa.me/"+CFG.whatsapp+"?text="+encodeURIComponent(t);
-document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa("আসসালামু আলাইকুম, ভর্তির বিষয়ে জানতে চাই।");a.target="_blank";a.rel="noopener"});
-$("fb").href=CFG.facebook;
-
-// fee table + picker
-function showFees(l){
-  const pg=l==="pg";
-  $("thDur").style.display=pg?"":"none";
-  $("feeBody").innerHTML=(pg?PG:UG).map(r=>pg?`<tr><td>${r[0]}</td><td class="n" style="font-weight:400">${r[1]}</td><td class="n">${tk(r[2])}</td></tr>`:`<tr><td>${r[0]}</td><td class="n">${tk(r[1])}</td></tr>`).join("");
-  document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.lvl===l));
-}
-document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>showFees(b.dataset.lvl));
-showFees("ug");
-const names=[...UG.map(r=>r[0]),...PG.map(r=>r[0]+" ("+r[1]+")")];
-$("pick").innerHTML=names.map(n=>`<option>${n}</option>`).join("");
-$("lprog").innerHTML=names.map(n=>`<option>${n}</option>`).join("");
-const upd=()=>{$("askWa").href=wa("আসসালামু আলাইকুম, আমি "+$("pick").value+" প্রোগ্রামে ভর্তি হতে চাই। আমার ওয়েভার ও মোট খরচ কত হবে জানতে চাই।")};
-$("pick").onchange=upd;upd();
-$("tBody").innerHTML=TCH.map(r=>`<tr><td>${r[0]}</td><td class="n">${tk(r[1])}</td></tr>`).join("");
-
-// FAQ
-let cur=Object.keys(FAQ)[0];
-function drawFaq(){
-  $("faqTabs").innerHTML=Object.keys(FAQ).map(k=>`<button aria-pressed="${k===cur}" data-k="${k}">${k}</button>`).join("");
-  $("faqTabs").querySelectorAll("button").forEach(b=>b.onclick=()=>{cur=b.dataset.k;drawFaq()});
-  $("faqList").innerHTML=FAQ[cur].map(q=>`<details><summary>${q[0]}</summary><p>${q[1]}</p></details>`).join("");
-}
-drawFaq();
-
-// lead form
-$("lead").addEventListener("submit",async e=>{
+document.getElementById('inquiry-form').addEventListener('submit', function(e){
   e.preventDefault();
-  const d={name:$("name").value,phone:$("phone").value,program:$("lprog").value,exam:$("exam").value,at:new Date().toLocaleString("en-GB")};
-  if(CFG.sheetUrl){try{await fetch(CFG.sheetUrl,{method:"POST",mode:"no-cors",body:JSON.stringify(d)})}catch(x){}}
-  $("ok").style.display="block";e.target.reset();
+  var name = document.getElementById('name').value.trim();
+  var phone = document.getElementById('phone').value.trim();
+  var program = document.getElementById('program').value;
+  var ssc = document.getElementById('ssc').value.trim();
+  var hsc = document.getElementById('hsc').value.trim();
+  var honours = document.getElementById('honours').value.trim();
+  var message = document.getElementById('message').value.trim();
+  var lines = ['ভর্তি বিষয়ে জানতে চাই', 'নাম: ' + name, 'ফোন: ' + phone, 'পছন্দের প্রোগ্রাম: ' + program];
+  if (ssc) lines.push('SSC GPA: ' + ssc);
+  if (hsc) lines.push('HSC GPA: ' + hsc);
+  if (honours) lines.push('অনার্স/CGPA: ' + honours);
+  if (message) lines.push('প্রশ্ন: ' + message);
+
+  var statusEl = document.getElementById('form-status');
+
+  // 1) Website-e save korar chesta — 5 second er beshi wait korbo na,
+  //    ar fail korleo WhatsApp atke thakbe na.
+  var savePromise;
+  if (WORKER_URL.indexOf('REPLACE-ME') === -1) {
+    var controller = new AbortController();
+    var timeoutId = setTimeout(function(){ controller.abort(); }, 5000);
+    savePromise = fetch(WORKER_URL + '/api/enquiry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, phone: phone, program: program, ssc_gpa: ssc, hsc_gpa: hsc, honours_cgpa: honours, message: message }),
+      signal: controller.signal
+    }).then(function(res){ return res.ok; }).catch(function(){ return false; })
+      .then(function(ok){ clearTimeout(timeoutId); return ok; });
+  } else {
+    savePromise = Promise.resolve(false);
+  }
+
+  savePromise.then(function(ok){
+    if (statusEl) {
+      statusEl.textContent = ok
+        ? '✓ আপনার মেসেজটি ওয়েবসাইটে জমা হয়েছে, আর WhatsApp-ও খুলছে — ওখানে Send চাপলেই হবে।'
+        : 'WhatsApp খুলছে — ওখানে Send চাপলেই আপনার মেসেজটি Admission টিমের কাছে যাবে। (এইবার ওয়েবসাইটে জমা হয়নি, শুধু WhatsApp-এ যাচ্ছে।)';
+    }
+  });
+
+  // 2) WhatsApp — sob somoy khulbe, save hok ba na hok.
+  window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
 });
 </script>
 </body>
