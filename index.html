@@ -1,309 +1,160 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UOB | Admission Portal</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#173d70;--light:#f3f6fa;--text:#243247}
-body{font-family:Inter,"Noto Sans Bengali",sans-serif;color:var(--text);line-height:1.6}
-body.bn{font-family:"Noto Sans Bengali",sans-serif}
-.container{width:90%;max-width:1120px;margin:auto}
-header{background:white;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
-nav{height:75px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:22px;font-weight:800;color:var(--blue)}
-.logo small{display:block;font-size:9px;letter-spacing:2px;color:#777}
-.navlinks{display:flex;gap:25px}
-.navlinks a{text-decoration:none;color:#334155;font-size:13px;font-weight:600}
-button,.btn{border:0;border-radius:8px;background:var(--blue);color:white;padding:12px 18px;cursor:pointer;text-decoration:none;font-weight:600}
-.lang{background:#edf2f8;color:var(--blue)}
-.menu{display:none}
-.hero{background:var(--light);padding:75px 0}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.tag{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:1px}
-h1{font-size:48px;line-height:1.2;color:var(--blue);margin:18px 0}
-.hero p{color:#64748b;margin-bottom:25px}
-.actions{display:flex;gap:12px;flex-wrap:wrap}
-.outline{background:white;color:var(--blue);border:1px solid #dce3ec}
-.hero-image{height:340px;border-radius:18px;background:linear-gradient(140deg,#173d70,#4978a9);display:flex;align-items:center;justify-content:center;color:white;text-align:center;padding:25px}
-.building{font-size:110px}
-section{padding:70px 0}
-.section-title{text-align:center;margin-bottom:35px}
-.section-title h2{font-size:30px;color:var(--blue);margin:8px}
-.section-title p{font-size:13px;color:#718096}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{padding:25px;border:1px solid #e5eaf0;border-radius:12px}
-.card-icon{font-size:28px;color:var(--blue)}
-.card h3{margin:15px 0 8px;font-size:17px}
-.card p{font-size:13px;color:#718096}
-.admission{background:var(--light)}
-.admission-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.admission h2{font-size:32px;color:var(--blue);margin:12px 0}
-.admission p{font-size:14px;color:#64748b}
-.form-box{background:white;padding:28px;border-radius:14px;border:1px solid #e5eaf0}
-.form-box h3{color:var(--blue);margin-bottom:5px}
-.form-box>p{margin-bottom:20px;font-size:12px}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.field{display:flex;flex-direction:column;gap:6px}
-.field label{font-size:12px;font-weight:600}
-.field input,.field select,.field textarea{padding:12px;border:1px solid #dce3ec;border-radius:7px;width:100%;font:inherit;font-size:12px}
-.field textarea{height:90px}
-.wide{grid-column:1/-1}
-.form-box button{width:100%;margin-top:15px}
-#message{display:none;background:#e7f6ed;color:#17633f;padding:12px;border-radius:7px;margin-top:12px;font-size:12px}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
-.why{padding:20px}
-.why h3{font-size:16px;margin:12px}
-.why p{font-size:12px;color:#718096}
-.cta{background:var(--blue);color:white;padding:35px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.cta p{font-size:13px;color:#dbe6f2}
-.cta button{background:white;color:var(--blue)}
-footer{background:#102d52;color:white;padding:45px 0 20px;margin-top:70px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
-footer h3,footer h4{margin-bottom:12px}
-footer p,footer a{color:#c5d3e2;font-size:12px;text-decoration:none}
-footer a{display:block;margin:7px 0}
-.copy{border-top:1px solid #ffffff25;margin-top:30px;padding-top:15px;font-size:11px;color:#b5c5d6}
-.bn-text{display:none}
-body.bn .en-text{display:none}
-body.bn .bn-text{display:inline}
-body.bn h1{line-height:1.5;font-size:42px}
-
-@media(max-width:768px){
- .container{width:92%}
- nav{height:65px}
- .menu{display:block}
- .navlinks{display:none;position:absolute;top:65px;left:0;width:100%;background:white;padding:20px;flex-direction:column;gap:15px;border-bottom:1px solid #eee}
- .navlinks.open{display:flex}
- .navlinks a{font-size:14px}
- .nav .desktop-btn{display:none}
- .hero{padding:45px 0}
- .hero-grid,.admission-grid{grid-template-columns:1fr}
- h1{font-size:36px}
- .hero-image{height:230px}
- section{padding:50px 0}
- .cards{grid-template-columns:1fr 1fr;gap:12px}
- .card{padding:17px}
- .card h3{font-size:14px}
- .form-grid{grid-template-columns:1fr}
- .wide{grid-column:auto}
- .why-grid{grid-template-columns:1fr}
- .cta{display:block;padding:25px}
- .cta button{margin-top:18px;width:100%}
- .footer-grid{grid-template-columns:1fr 1fr}
- .footer-grid>div:first-child{grid-column:1/-1}
-}
-@media(max-width:400px){
- .cards{grid-template-columns:1fr}
- h1{font-size:31px}
- body.bn h1{font-size:30px}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>স্প্রিং ২০২৭ ভর্তি | ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয় (UOB)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=SolaimanLipi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'SolaimanLipi', Arial, sans-serif;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
 </head>
+<body class="bg-slate-50 text-slate-800 antialiased">
 
-<body>
+    <!-- Header / Navbar -->
+    <header class="bg-blue-900 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white p-2 rounded-lg font-bold text-blue-900 text-xl">UOB</div>
+                <div>
+                    <h1 class="text-lg font-bold leading-tight">ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়</h1>
+                    <p class="text-xs text-blue-200">University of Brahmanbaria</p>
+                </div>
+            </div>
+            <div>
+                <a href="#inquiry-form" class="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold px-4 py-2 rounded-lg text-sm shadow transition">ইনকোয়ারি বা আবেদন</a>
+            </div>
+        </div>
+    </header>
 
-<header>
-<div class="container">
-<nav>
-<div class="logo">UOB
-<small>ADMISSION PORTAL</small>
-</div>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="bg-amber-400 text-blue-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">স্প্রিং ২০২৭ ভর্তি চলছে</span>
+            <h2 class="text-3xl md:text-5xl font-bold mt-4 mb-4">আপনার উচ্চশিক্ষার আস্থার ঠিকানা</h2>
+            <p class="text-blue-100 text-base md:text-lg mb-8 max-w-2xl mx-auto">আধুনিক ক্যাম্পাস, মানসম্মত শিক্ষা, নারী শিক্ষার্থীদের জন্য ডে কেয়ার সুবিধা এবং শিক্ষকদের জন্য বিশেষ ছাড় নিয়ে শুরু হয়েছে স্প্রিং ২০২৭ সেশনের ভর্তি কার্যক্রম।</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#inquiry-form" class="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold px-6 py-3 rounded-lg shadow-lg transition">ফর্ম পূরণ করুন</a>
+                <a href="tel:01313430064" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-6 py-3 rounded-lg transition">📞 হেল্পলাইন: ০১৩১৩-৪৩০০৬৪</a>
+            </div>
+        </div>
+    </section>
 
-<div class="navlinks" id="navlinks">
-<a href="#home"><span class="en-text">Home</span><span class="bn-text">হোম</span></a>
-<a href="#about"><span class="en-text">About</span><span class="bn-text">পরিচিতি</span></a>
-<a href="#programs"><span class="en-text">Programs</span><span class="bn-text">প্রোগ্রাম</span></a>
-<a href="#admission"><span class="en-text">Admission</span><span class="bn-text">ভর্তি</span></a>
-<a href="#contact"><span class="en-text">Contact</span><span class="bn-text">যোগাযোগ</span></a>
-</div>
+    <!-- Key Highlights / Special Features -->
+    <section class="py-12 max-w-7xl mx-auto px-4">
+        <h3 class="text-2xl font-bold text-center mb-8 text-blue-950">কেন ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয় বেছে নেবেন?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Feature 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <div class="w-12 h-12 bg-blue-100 text-blue-900 rounded-lg flex items-center justify-center font-bold text-xl mb-4">👶</div>
+                <h4 class="text-lg font-bold mb-2 text-blue-900">নারী শিক্ষার্থীদের জন্য ডে কেয়ার</h4>
+                <p class="text-slate-600 text-sm">মায়েরা যেন কোনো দুশ্চিন্তা ছাড়াই স্বাচ্ছন্দ্যে ক্লাস ও একাডেমিক কার্যক্রমে অংশ নিতে পারেন, সেজন্য ক্যাম্পাসে রয়েছে আধুনিক ডে কেয়ার সিস্টেমের সুব্যবস্থা (যেমনটি রাঙ্গামাটি বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়েও রয়েছে)।</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center font-bold text-xl mb-4">👨‍🏫</div>
+                <h4 class="text-lg font-bold mb-2 text-blue-900">শিক্ষকদের জন্য ৭০% ছাড়</h4>
+                <p class="text-slate-600 text-sm">প্রাথমিক, মাধ্যমিক, কলেজ ও মাদ্রাসার কর্মরত শিক্ষকগণের মাস্টার্স প্রোগ্রামে (MBA, MA, MSS) রয়েছে সর্বোচ্চ ৭০% পর্যন্ত বিশেষ টিউশন ফি ওয়েভার এবং শুক্র-শনিবার ক্লাসের সুবিধা।</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-lg flex items-center justify-center font-bold text-xl mb-4">🎓</div>
+                <h4 class="text-lg font-bold mb-2 text-blue-900">স্কলারশিপ ও আইইএলটিএস</h4>
+                <p class="text-slate-600 text-sm">এসএসসি ও এইচএসসি ফলাফলের ওপর আকর্ষণীয় স্কলারশিপ এবং ব্রিটিশ কাউন্সিল-সার্টিফাইড শিক্ষকদের পরিচালনায় বিশেষ আইইএলটিএস প্রস্তুতি কোর্স।</p>
+            </div>
+        </div>
+    </section>
 
-<div>
-<button class="lang" onclick="toggleLanguage()">বাংলা</button>
-<button class="menu" onclick="toggleMenu()">☰</button>
-<a href="#admission" class="btn desktop-btn">Apply Now</a>
-</div>
-</nav>
-</div>
-</header>
+    <!-- Programs Offered -->
+    <section class="bg-blue-50 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold text-center mb-8 text-blue-950">অফারকৃত প্রোগ্রামসমূহ</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Undergrad -->
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h4 class="text-lg font-bold text-blue-900 mb-4 border-b pb-2">আন্ডারগ্রাজুয়েট প্রোগ্রামসমূহ</h4>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>LLB (অনার্স)</span> <span class="font-semibold text-blue-900">৩১৬,৪০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>B.Sc. in CSE</span> <span class="font-semibold text-blue-900">৩১৬,০০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>B.Sc. in EEE</span> <span class="font-semibold text-blue-900">৩১২,৬০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>BBA</span> <span class="font-semibold text-blue-900">২৬৬,৯০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>BA (Hons.) in English</span> <span class="font-semibold text-blue-900">২৪৭,৬০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>BSS (Hons.) in Sociology</span> <span class="font-semibold text-blue-900">১৯০,৪০০ টাকা</span></li>
+                    </ul>
+                </div>
+                <!-- Postgrad -->
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h4 class="text-lg font-bold text-blue-900 mb-4 border-b pb-2">গ্রাজুয়েট ও অন্যান্য প্রোগ্রামসমূহ</h4>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>MBA (২ বছর / ১ বছর)</span> <span class="font-semibold text-blue-900">৯২,১০০ - ১৪৭,৭০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>MA in English Literature & ELT</span> <span class="font-semibold text-blue-900">৮০,৭০০ - ১১৩,৩০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>MSS in Sociology</span> <span class="font-semibold text-blue-900">৬৫,৯০০ - ৯৮,৭০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>PGD in Library & Info Science</span> <span class="font-semibold text-blue-900">৪১,১০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>IELTS Course (UOB Students)</span> <span class="font-semibold text-blue-900">৮,০০০ টাকা</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<main>
-<section class="hero" id="home">
-<div class="container hero-grid">
-<div>
-<div class="tag">UNIVERSITY OF BRAHMANBARIA</div>
-<h1>
-<span class="en-text">Shape Your Future With Quality Education</span>
-<span class="bn-text">মানসম্মত শিক্ষায় গড়ুন আপনার আগামীর ভবিষ্যৎ</span>
-</h1>
-<p>
-<span class="en-text">Explore academic opportunities at the University of Brahmanbaria. Take the first step towards your educational journey.</span>
-<span class="bn-text">ইউনিভার্সিটি অব ব্রাহ্মণবাড়িয়ায় উচ্চশিক্ষার সুযোগগুলো জানুন। শুরু হোক আপনার শিক্ষাজীবনের নতুন যাত্রা।</span>
-</p>
-<div class="actions">
-<a href="#admission" class="btn"><span class="en-text">Submit Inquiry →</span><span class="bn-text">ভর্তির তথ্য জানুন →</span></a>
-<a href="#programs" class="btn outline"><span class="en-text">Explore Programs</span><span class="bn-text">প্রোগ্রাম দেখুন</span></a>
-</div>
-</div>
+    <!-- Inquiry / Application Form Section -->
+    <section id="inquiry-form" class="py-12 max-w-3xl mx-auto px-4">
+        <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-200">
+            <h3 class="text-2xl font-bold text-center text-blue-950 mb-2">অনলাইন ইনকোয়ারি ফর্ম</h3>
+            <p class="text-center text-slate-500 text-sm mb-6">আপনার তথ্য দিন, আমাদের অ্যাডমিশন টিম দ্রুত আপনার সাথে যোগাযোগ করবে।</p>
+            
+            <form action="#" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">আপনার পূর্ণ নাম *</label>
+                    <input type="text" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="আপনার নাম লিখুন">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">মোবাইল / WhatsApp নম্বর *</label>
+                        <input type="tel" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="017xxxxxxxx">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">পছন্দের ডিপার্টমেন্ট বা প্রোগ্রাম *</label>
+                        <select class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <option>LLB (অনার্স)</option>
+                            <option>B.Sc. in CSE</option>
+                            <option>B.Sc. in EEE</option>
+                            <option>BBA</option>
+                            <option>BA in English</option>
+                            <option>BSS in Sociology</option>
+                            <option>MBA / Masters (শিক্ষকদের অফার সহ)</option>
+                            <option>IELTS Preparation</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">এসএসসি / এইচএসসি বা শিক্ষাগত যোগ্যতা (GPA)</label>
+                    <input type="text" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="যেমন: SSC- GPA 5.00, HSC- GPA 4.50">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">আপনার কোনো প্রশ্ন বা মতামত থাকলে লিখুন</label>
+                    <textarea rows="3" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="স্কলারশিপ বা ডে কেয়ার বা অন্যান্য বিষয়ে জানার থাকলে লিখুন..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 rounded-lg shadow transition">তথ্য জমা দিন</button>
+            </form>
+        </div>
+    </section>
 
-<div class="hero-image">
-<div>
-<div class="building">🏛️</div>
-<h2>University of Brahmanbaria</h2>
-<p style="color:#e1eaf4">Your academic journey starts here.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section id="programs">
-<div class="container">
-<div class="section-title">
-<div class="tag">ACADEMIC OPPORTUNITIES</div>
-<h2><span class="en-text">Explore Academic Programs</span><span class="bn-text">একাডেমিক প্রোগ্রামসমূহ</span></h2>
-<p><span class="en-text">Discover your opportunities for higher education.</span><span class="bn-text">উচ্চশিক্ষার বিভিন্ন সুযোগ সম্পর্কে জানুন।</span></p>
-</div>
-
-<div class="cards">
-<div class="card">
-<div class="card-icon">📚</div>
-<h3><span class="en-text">Undergraduate Programs</span><span class="bn-text">স্নাতক প্রোগ্রাম</span></h3>
-<p><span class="en-text">Explore bachelor's degree opportunities.</span><span class="bn-text">স্নাতক পর্যায়ের শিক্ষার সুযোগ জানুন।</span></p>
-</div>
-<div class="card">
-<div class="card-icon">🎓</div>
-<h3><span class="en-text">Academic Departments</span><span class="bn-text">একাডেমিক বিভাগ</span></h3>
-<p><span class="en-text">Learn about academic departments.</span><span class="bn-text">বিশ্ববিদ্যালয়ের বিভাগগুলো সম্পর্কে জানুন।</span></p>
-</div>
-<div class="card">
-<div class="card-icon">📋</div>
-<h3><span class="en-text">Admission Guidance</span><span class="bn-text">ভর্তি নির্দেশনা</span></h3>
-<p><span class="en-text">Get admission process information.</span><span class="bn-text">ভর্তি প্রক্রিয়া সম্পর্কে তথ্য জানুন।</span></p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="admission" id="admission">
-<div class="container admission-grid">
-<div>
-<div class="tag">START YOUR JOURNEY</div>
-<h2><span class="en-text">Your Admission Journey Starts Here</span><span class="bn-text">আপনার ভর্তি-যাত্রা শুরু হোক এখান থেকে</span></h2>
-<p><span class="en-text">Share your details through our inquiry form. Our admission team can contact you with relevant information.</span><span class="bn-text">নিচের ফর্মে আপনার তথ্য দিন। ভর্তি সংক্রান্ত প্রয়োজনীয় তথ্য জানাতে আমাদের টিম আপনার সঙ্গে যোগাযোগ করতে পারবে।</span></p>
-<br>
-<p>✓ <span class="en-text">Simple online inquiry</span><span class="bn-text">সহজ অনলাইন অনুসন্ধান</span></p>
-<p>✓ <span class="en-text">Admission information</span><span class="bn-text">ভর্তি সংক্রান্ত তথ্য</span></p>
-<p>✓ <span class="en-text">Guidance and support</span><span class="bn-text">দিকনির্দেশনা ও সহযোগিতা</span></p>
-</div>
-
-<form class="form-box" onsubmit="submitForm(event)">
-<h3><span class="en-text">Admission Inquiry</span><span class="bn-text">ভর্তি সংক্রান্ত অনুসন্ধান</span></h3>
-<p><span class="en-text">Fill in your information below.</span><span class="bn-text">আপনার তথ্য দিয়ে ফর্মটি পূরণ করুন।</span></p>
-
-<div class="form-grid">
-<div class="field">
-<label><span class="en-text">Full Name *</span><span class="bn-text">পুরো নাম *</span></label>
-<input type="text" required placeholder="Your name">
-</div>
-<div class="field">
-<label><span class="en-text">Mobile Number *</span><span class="bn-text">মোবাইল নম্বর *</span></label>
-<input type="tel" required placeholder="01XXXXXXXXX">
-</div>
-<div class="field">
-<label>Email</label>
-<input type="email" placeholder="name@example.com">
-</div>
-<div class="field">
-<label><span class="en-text">Interested Program *</span><span class="bn-text">পছন্দের প্রোগ্রাম *</span></label>
-<select required>
-<option value="">Select Program</option>
-<option>Undergraduate</option>
-<option>Academic Department</option>
-<option>Other</option>
-</select>
-</div>
-<div class="field wide">
-<label><span class="en-text">Message</span><span class="bn-text">আপনার বার্তা</span></label>
-<textarea placeholder="Write your question..."></textarea>
-</div>
-</div>
-
-<button type="submit"><span class="en-text">Submit Inquiry →</span><span class="bn-text">তথ্য জমা দিন →</span></button>
-<div id="message"><span class="en-text">Demo only: Backend connection is not configured yet.</span><span class="bn-text">এটি ডেমো। এখনো Backend যুক্ত করা হয়নি।</span></div>
-</form>
-</div>
-</section>
-
-<section id="about">
-<div class="container">
-<div class="section-title">
-<div class="tag">WHY UOB</div>
-<h2><span class="en-text">Make an Informed Choice</span><span class="bn-text">জেনে-বুঝে সিদ্ধান্ত নিন</span></h2>
-<p><span class="en-text">Find information and connect with the university.</span><span class="bn-text">প্রয়োজনীয় তথ্য জানুন এবং বিশ্ববিদ্যালয়ের সঙ্গে যোগাযোগ করুন।</span></p>
-</div>
-
-<div class="why-grid">
-<div class="why"><div class="card-icon">🔎</div><h3><span class="en-text">Clear Information</span><span class="bn-text">সহজ তথ্য</span></h3><p><span class="en-text">Find admission information in one place.</span><span class="bn-text">ভর্তির তথ্য এক জায়গায় পান।</span></p></div>
-<div class="why"><div class="card-icon">📝</div><h3><span class="en-text">Easy Inquiry</span><span class="bn-text">সহজ অনুসন্ধান</span></h3><p><span class="en-text">Submit your inquiry online.</span><span class="bn-text">অনলাইনে আপনার প্রশ্ন পাঠান।</span></p></div>
-<div class="why"><div class="card-icon">🤝</div><h3><span class="en-text">Helpful Guidance</span><span class="bn-text">প্রয়োজনীয় দিকনির্দেশনা</span></h3><p><span class="en-text">Connect with the admission team.</span><span class="bn-text">ভর্তি টিমের সঙ্গে যোগাযোগ করুন।</span></p></div>
-</div>
-</div>
-</section>
-
-<div class="container" id="contact">
-<div class="cta">
-<div>
-<h2><span class="en-text">Have Questions About Admission?</span><span class="bn-text">ভর্তি নিয়ে কোনো প্রশ্ন আছে?</span></h2>
-<p><span class="en-text">We are here to help you take the next step.</span><span class="bn-text">আপনার পরবর্তী পদক্ষেপে আমরা সহযোগিতা করতে প্রস্তুত।</span></p>
-</div>
-<a href="https://uob.edu.bd/" target="_blank" class="btn">Official Website ↗</a>
-</div>
-</div>
-</main>
-
-<footer>
-<div class="container">
-<div class="footer-grid">
-<div>
-<h3>University of Brahmanbaria</h3>
-<p>Admission Portal</p>
-<p><span class="en-text">Your academic journey starts here.</span><span class="bn-text">আপনার শিক্ষাজীবনের যাত্রা শুরু হোক এখান থেকে।</span></p>
-</div>
-<div>
-<h4>Quick Links</h4>
-<a href="#home">Home</a>
-<a href="#programs">Programs</a>
-<a href="#admission">Admission</a>
-</div>
-<div>
-<h4>Official Links</h4>
-<a href="https://uob.edu.bd/" target="_blank">UOB Website ↗</a>
-<a href="#contact">Contact</a>
-</div>
-</div>
-<div class="copy">© 2026 University of Brahmanbaria · Admission Portal</div>
-</div>
-</footer>
-
-<script>
-function toggleLanguage(){
- document.body.classList.toggle("bn");
- document.querySelector(".lang").textContent=
- document.body.classList.contains("bn")?"English":"বাংলা";
-}
-function toggleMenu(){
- document.getElementById("navlinks").classList.toggle("open");
-}
-function submitForm(event){
- event.preventDefault();
- document.getElementById("message").style.display="block";
-}
-</script>
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-slate-300 py-8 px-4">
+        <div class="max-w-7xl mx-auto text-center space-y-2">
+            <h5 class="text-white font-bold text-lg">ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয় (University of Brahmanbaria)</h5>
+            <p class="text-sm">ঠিকানা: ১০২০/১৫ বাইপাস রোড, ডাটিয়ারা, সিজেএম কোর্ট/এলজিইডি অফিসের পাশে, ব্রাহ্মণবাড়িয়া-৩৪০০[cite: 1]</p>
+            <p class="text-sm">হেল্পলাইন: ০১৩১৩-৪৩০০৬৪ | ইমেইল: admission@uob.edu.bd[cite: 1]</p>
+            <p class="text-xs text-slate-500 pt-4">© ২০২৭ ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়। সর্বস্বত্ব সংরক্ষিত।</p>
+        </div>
+    </footer>
 
 </body>
 </html>
