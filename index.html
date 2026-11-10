@@ -13,18 +13,24 @@
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
         }
+        .hero-pattern {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
 
     <!-- Header / Navbar -->
-    <header class="bg-blue-900 text-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <header class="bg-white text-slate-900 shadow-md sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <div class="bg-white p-2 rounded-lg font-bold text-blue-900 text-xl">UOB</div>
+                <!-- অফিশিয়াল লোগো (আপনার লোগো ফাইলটি logo.png নামে সেভ করে এখানে যুক্ত করতে পারেন) -->
+                <div class="bg-white p-1 rounded">
+                    <img src="logo.png" alt="University of Brahmanbaria Logo" class="h-10 md:h-12 w-auto object-contain" onerror="this.src='https://uob.edu.bd/frontend/assets/images/logo.png'">
+                </div>
                 <div>
-                    <h1 class="text-lg font-bold leading-tight">ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়</h1>
-                    <p class="text-xs text-blue-200">University of Brahmanbaria</p>
+                    <h1 class="text-sm md:text-base font-bold text-blue-950 leading-tight">ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়</h1>
+                    <p class="text-xs text-slate-500 font-medium">University of Brahmanbaria</p>
                 </div>
             </div>
             <div>
@@ -34,12 +40,18 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <span class="bg-amber-400 text-blue-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">স্প্রিং ২০২৭ ভর্তি চলছে</span>
-            <h2 class="text-3xl md:text-5xl font-bold mt-4 mb-4">আপনার উচ্চশিক্ষার আস্থার ঠিকানা</h2>
-            <p class="text-blue-100 text-base md:text-lg mb-8 max-w-2xl mx-auto">আধুনিক ক্যাম্পাস, মানসম্মত শিক্ষা, নারী শিক্ষার্থীদের জন্য ডে কেয়ার সুবিধা এবং শিক্ষকদের জন্য বিশেষ ছাড় নিয়ে শুরু হয়েছে স্প্রিং ২০২৭ সেশনের ভর্তি কার্যক্রম।</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
+    <section class="hero-pattern text-white py-20 px-4 border-b-4 border-amber-500">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+            <!-- লোগো প্রিভিউ ব্যাজ -->
+            <div class="inline-flex items-center justify-center bg-white p-3 rounded-2xl shadow-xl mb-2 border border-blue-900/20">
+                <img src="logo.png" alt="UOB Logo" class="h-16 md:h-20 w-auto object-contain" onerror="this.src='https://uob.edu.bd/frontend/assets/images/logo.png'">
+            </div>
+            <div>
+                <span class="bg-amber-400 text-blue-950 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider inline-block mb-3 shadow">স্প্রিং ২০২৭ ভর্তি চলছে</span>
+                <h2 class="text-3xl md:text-5xl font-bold leading-tight">ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়ে আপনাকে স্বাগতম</h2>
+            </div>
+            <p class="text-slate-200 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">আধুনিক ক্যাম্পাস, মানসম্মত শিক্ষা, নারী শিক্ষার্থীদের জন্য ডে কেয়ার সুবিধা এবং শিক্ষকদের জন্য বিশেষ ছাড় নিয়ে শুরু হয়েছে স্প্রিং ২০২৭ সেশনের ভর্তি কার্যক্রম।</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 pt-2">
                 <a href="#inquiry-form" class="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold px-6 py-3 rounded-lg shadow-lg transition">ফর্ম পূরণ করুন</a>
                 <a href="tel:01313430064" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-6 py-3 rounded-lg transition">📞 হেল্পলাইন: ০১৩১৩-৪৩০০৬৪</a>
             </div>
@@ -51,52 +63,52 @@
         <h3 class="text-2xl font-bold text-center mb-8 text-blue-950">কেন ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয় বেছে নেবেন?</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Feature 1 -->
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                <div class="w-12 h-12 bg-blue-100 text-blue-900 rounded-lg flex items-center justify-center font-bold text-xl mb-4">👶</div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                <div class="w-12 h-12 bg-blue-50 text-blue-900 rounded-lg flex items-center justify-center font-bold text-xl mb-4 border border-blue-100">👶</div>
                 <h4 class="text-lg font-bold mb-2 text-blue-900">নারী শিক্ষার্থীদের জন্য ডে কেয়ার</h4>
-                <p class="text-slate-600 text-sm">মায়েরা যেন কোনো দুশ্চিন্তা ছাড়াই স্বাচ্ছন্দ্যে ক্লাস ও একাডেমিক কার্যক্রমে অংশ নিতে পারেন, সেজন্য ক্যাম্পাসে রয়েছে আধুনিক ডে কেয়ার সিস্টেমের সুব্যবস্থা (যেমনটি রাঙ্গামাটি বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়েও রয়েছে)।</p>
+                <p class="text-slate-600 text-sm leading-relaxed">মায়েরা যেন কোনো দুশ্চিন্তা ছাড়াই স্বাচ্ছন্দ্যে ক্লাস ও একাডেমিক কার্যক্রমে অংশ নিতে পারেন, সেজন্য ক্যাম্পাসে রয়েছে আধুনিক ডে কেয়ার সিস্টেমের সুব্যবস্থা (যেমনটি রাঙ্গামাটি বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়েও রয়েছে)।</p>
             </div>
             <!-- Feature 2 -->
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center font-bold text-xl mb-4">👨‍🏫</div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                <div class="w-12 h-12 bg-amber-50 text-amber-800 rounded-lg flex items-center justify-center font-bold text-xl mb-4 border border-amber-100">👨‍🏫</div>
                 <h4 class="text-lg font-bold mb-2 text-blue-900">শিক্ষকদের জন্য ৭০% ছাড়</h4>
-                <p class="text-slate-600 text-sm">প্রাথমিক, মাধ্যমিক, কলেজ ও মাদ্রাসার কর্মরত শিক্ষকগণের মাস্টার্স প্রোগ্রামে (MBA, MA, MSS) রয়েছে সর্বোচ্চ ৭০% পর্যন্ত বিশেষ টিউশন ফি ওয়েভার এবং শুক্র-শনিবার ক্লাসের সুবিধা।</p>
+                <p class="text-slate-600 text-sm leading-relaxed">প্রাথমিক, মাধ্যমিক, কলেজ ও মাদ্রাসার কর্মরত শিক্ষকগণের মাস্টার্স প্রোগ্রামে (MBA, MA, MSS) রয়েছে সর্বোচ্চ ৭০% পর্যন্ত বিশেষ টিউশন ফি ওয়েভার এবং শুক্র-শনিবার ক্লাসের সুবিধা।</p>
             </div>
             <!-- Feature 3 -->
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-lg flex items-center justify-center font-bold text-xl mb-4">🎓</div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                <div class="w-12 h-12 bg-emerald-50 text-emerald-800 rounded-lg flex items-center justify-center font-bold text-xl mb-4 border border-emerald-100">🎓</div>
                 <h4 class="text-lg font-bold mb-2 text-blue-900">স্কলারশিপ ও আইইএলটিএস</h4>
-                <p class="text-slate-600 text-sm">এসএসসি ও এইচএসসি ফলাফলের ওপর আকর্ষণীয় স্কলারশিপ এবং ব্রিটিশ কাউন্সিল-সার্টিফাইড শিক্ষকদের পরিচালনায় বিশেষ আইইএলটিএস প্রস্তুতি কোর্স।</p>
+                <p class="text-slate-600 text-sm leading-relaxed">এসএসসি ও এইচএসসি ফলাফলের ওপর আকর্ষণীয় স্কলারশিপ এবং ব্রিটিশ কাউন্সিল-সার্টিফাইড শিক্ষকদের পরিচালনায় বিশেষ আইইএলটিএস প্রস্তুতি কোর্স।</p>
             </div>
         </div>
     </section>
 
     <!-- Programs Offered -->
-    <section class="bg-blue-50 py-12 px-4">
+    <section class="bg-blue-50/50 py-12 px-4 border-y border-blue-100">
         <div class="max-w-7xl mx-auto">
             <h3 class="text-2xl font-bold text-center mb-8 text-blue-950">অফারকৃত প্রোগ্রামসমূহ</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Undergrad -->
-                <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                     <h4 class="text-lg font-bold text-blue-900 mb-4 border-b pb-2">আন্ডারগ্রাজুয়েট প্রোগ্রামসমূহ</h4>
-                    <ul class="space-y-2 text-sm text-slate-700">
-                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>LLB (অনার্স)</span> <span class="font-semibold text-blue-900">৩১৬,৪০০ টাকা</span></li>
-                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>B.Sc. in CSE</span> <span class="font-semibold text-blue-900">৩১৬,০০০ টাকা</span></li>
-                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>B.Sc. in EEE</span> <span class="font-semibold text-blue-900">৩১২,৬০০ টাকা</span></li>
-                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>BBA</span> <span class="font-semibold text-blue-900">২৬৬,৯০০ টাকা</span></li>
-                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>BA (Hons.) in English</span> <span class="font-semibold text-blue-900">২৪৭,৬০০ টাকা</span></li>
-                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>BSS (Hons.) in Sociology</span> <span class="font-semibold text-blue-900">১৯০,৪০০ টাকা</span></li>
+                    <ul class="space-y-2.5 text-sm text-slate-700">
+                        <li class="flex justify-between items-center bg-slate-50 p-2.5 rounded border border-slate-100"><span>LLB (অনার্স)</span> <span class="font-semibold text-blue-900">৩১৬,৪০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2.5 rounded border border-slate-100"><span>B.Sc. in CSE</span> <span class="font-semibold text-blue-900">৩১৬,০০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2.5 rounded border border-slate-100"><span>B.Sc. in EEE</span> <span class="font-semibold text-blue-900">৩১২,৬০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2.5 rounded border border-slate-100"><span>BBA</span> <span class="font-semibold text-blue-900">২৬৬,৯০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2.5 rounded border border-slate-100"><span>BA (Hons.) in English</span> <span class="font-semibold text-blue-900">২৪৭,৬০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2.5 rounded border border-slate-100"><span>BSS (Hons.) in Sociology</span> <span class="font-semibold text-blue-900">১৯০,৪০০ টাকা</span></li>
                     </ul>
                 </div>
                 <!-- Postgrad -->
-                <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                     <h4 class="text-lg font-bold text-blue-900 mb-4 border-b pb-2">গ্রাজুয়েট ও অন্যান্য প্রোগ্রামসমূহ</h4>
-                    <ul class="space-y-2 text-sm text-slate-700">
-                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>MBA (২ বছর / ১ বছর)</span> <span class="font-semibold text-blue-900">৯২,১০০ - ১৪৭,৭০০ টাকা</span></li>
-                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>MA in English Literature & ELT</span> <span class="font-semibold text-blue-900">৮০,৭০০ - ১১৩,৩০০ টাকা</span></li>
-                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>MSS in Sociology</span> <span class="font-semibold text-blue-900">৬৫,৯০০ - ৯৮,৭০০ টাকা</span></li>
-                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>PGD in Library & Info Science</span> <span class="font-semibold text-blue-900">৪১,১০০ টাকা</span></li>
-                        <li class="flex justify-between items-center bg-slate-50 p-2 rounded"><span>IELTS Course (UOB Students)</span> <span class="font-semibold text-blue-900">৮,০০০ টাকা</span></li>
+                    <ul class="space-y-2.5 text-sm text-slate-700">
+                        <li class="flex justify-between items-center bg-slate-50 p-2.5 rounded border border-slate-100"><span>MBA (২ বছর / ১ বছর)</span> <span class="font-semibold text-blue-900">৯২,১০০ - ১৪৭,৭০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2.5 rounded border border-slate-100"><span>MA in English Literature & ELT</span> <span class="font-semibold text-blue-900">৮০,৭০০ - ১১৩,৩০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2.5 rounded border border-slate-100"><span>MSS in Sociology</span> <span class="font-semibold text-blue-900">৬৫,৯০০ - ৯৮,৭০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2.5 rounded border border-slate-100"><span>PGD in Library & Info Science</span> <span class="font-semibold text-blue-900">৪১,১০০ টাকা</span></li>
+                        <li class="flex justify-between items-center bg-slate-50 p-2.5 rounded border border-slate-100"><span>IELTS Course (UOB Students)</span> <span class="font-semibold text-blue-900">৮,০০০ টাকা</span></li>
                     </ul>
                 </div>
             </div>
@@ -105,7 +117,7 @@
 
     <!-- Inquiry / Application Form Section -->
     <section id="inquiry-form" class="py-12 max-w-3xl mx-auto px-4">
-        <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-200">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-200">
             <h3 class="text-2xl font-bold text-center text-blue-950 mb-2">অনলাইন ইনকোয়ারি ফর্ম</h3>
             <p class="text-center text-slate-500 text-sm mb-6">আপনার তথ্য দিন, আমাদের অ্যাডমিশন টিম দ্রুত আপনার সাথে যোগাযোগ করবে।</p>
             
@@ -141,13 +153,13 @@
                     <label class="block text-sm font-medium text-slate-700 mb-1">আপনার কোনো প্রশ্ন বা মতামত থাকলে লিখুন</label>
                     <textarea rows="3" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="স্কলারশিপ বা ডে কেয়ার বা অন্যান্য বিষয়ে জানার থাকলে লিখুন..."></textarea>
                 </div>
-                <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 rounded-lg shadow transition">তথ্য জমা দিন</button>
+                <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 rounded-lg shadow-md transition">তথ্য জমা দিন</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-blue-950 text-slate-300 py-8 px-4">
+    <footer class="bg-blue-950 text-slate-300 py-8 px-4 border-t border-blue-900">
         <div class="max-w-7xl mx-auto text-center space-y-2">
             <h5 class="text-white font-bold text-lg">ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয় (University of Brahmanbaria)</h5>
             <p class="text-sm">ঠিকানা: ১০২০/১৫ বাইপাস রোড, ডাটিয়ারা, সিজেএম কোর্ট/এলজিইডি অফিসের পাশে, ব্রাহ্মণবাড়িয়া-৩৪০০[cite: 1]</p>
