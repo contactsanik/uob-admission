@@ -1,0 +1,52 @@
+# wrangler.toml — UOB Admission Hub Backend v1
+# Cloudflare Workers + D1. Deploy: npx wrangler deploy
+# Local dev: npx wrangler dev
+#
+# ⚠️ database_id khali rakha ache — npx wrangler d1 create
+# uob_admission_hub chalale je id dibe, oita ekhane bosate hobe.
+# Kono database_id / email / API key baniye bosano hoy nai.
+
+name = "uob-admission-hub"
+main = "src/index.js"
+compatibility_date = "2024-11-18"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+# --- Environment variables (non-secret) ---
+[vars]
+ENVIRONMENT = "production"
+SITE_NAME = "UOB Admission Hub"
+ALLOWED_ORIGIN = "https://contactsanik.github.io"
+API_BASE = "/api"
+
+# Email notification (optional) — CHANGE THIS to your own email.
+# IMPORTANT: With FROM_EMAIL = onboarding@resend.dev (free, no domain
+# needed), Resend only delivers to your own Resend account email.
+# So NOTIFY_EMAIL must be the exact email you used to sign up at
+# resend.com. Email na chaile ei line-ta khali rekhe dao — enquiry
+# tobuo D1-te save hobe, email shudhu skip hobe.
+NOTIFY_EMAIL = "PASTE_YOUR_EMAIL_HERE"
+FROM_EMAIL = "onboarding@resend.dev"
+
+# Secrets — do NOT write real values here.
+# Set them with commands (see README.md):
+#   npx wrangler secret put ADMIN_EMAIL
+#   npx wrangler secret put ADMIN_PASSWORD
+#   npx wrangler secret put RESEND_API_KEY   (optional, email chaile)
+#   npx wrangler secret put ADMIN_TOKEN      (optional fallback)
+
+# --- D1 Database — PRIMARY storage ---
+[[d1_databases]]
+binding = "DB"
+database_name = "uob_admission_hub"
+database_id = "373806ed-1889-46b7-a352-421fcdb27ae6"
+
+# --- Static assets ---
+# public/index.html Worker-er "/" theke serve hoy (ASSETS),
+# ar /admin Worker-er vitore embed kora (src/index.js-er ADMIN_HTML).
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+[observability]
+enabled = true
