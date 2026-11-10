@@ -38,7 +38,7 @@ FROM_EMAIL = "onboarding@resend.dev"
 # --- D1 Database — PRIMARY storage ---
 [[d1_databases]]
 binding = "DB"
-database_name = "uob_admission_hub"
+database_name = "uob-admission-hub"
 database_id = "373806ed-1889-46b7-a352-421fcdb27ae6"
 
 # --- Static assets ---
