@@ -37,7 +37,7 @@ FROM_EMAIL = "onboarding@resend.dev"
 [[d1_databases]]
 binding = "DB"
 database_name = "uob-admission-hub"
-database_id = "PASTE_YOUR_D1_ID_HERE"
+database_id = "b58109fe-01e2-4c4e-8581-a94f0ebd75f4"
 
 # --- Static assets: NAI ---
 # Hub page-ta src/index.js-er vitorei embed kora (v8.2 pattern),
