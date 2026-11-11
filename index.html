@@ -105,6 +105,12 @@
   input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .form-box button{margin-top:22px;width:100%;padding:14px;font:inherit;font-weight:700;font-size:17px}
+  .form-box button:disabled{opacity:.65;cursor:wait}
+  /* জমা সফল হলে সুন্দর সবুজ কার্ড */
+  .success-box{background:#e6f4ea;border:1px solid #b7dfc2;border-radius:12px;padding:28px 22px;text-align:center}
+  .success-box .tick{width:56px;height:56px;margin:0 auto;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700}
+  .success-box h3{margin:12px 0 6px;color:var(--green);font-size:21px}
+  .success-box p{margin:0;color:var(--muted);font-size:15.5px}
   .form-alt{text-align:center;color:var(--muted);margin:18px 0 0;font-size:15.5px}
 
   /* FAQ */
@@ -292,6 +298,11 @@
     <div class="form-box">
       <h2 class="sec">জানতে চান? লিখে পাঠান</h2>
       <p class="sub">নাম আর ফোন নম্বর দিন — Admission টিম আপনার সঙ্গে যোগাযোগ করবে।</p>
+      <div id="form-success" class="success-box" hidden>
+        <div class="tick">✓</div>
+        <h3>ধন্যবাদ! আপনার তথ্য পৌঁছে গেছে।</h3>
+        <p>Admission টিম শীঘ্রই আপনার সঙ্গে যোগাযোগ করবে। WhatsApp-এ Send চাপলে আরও দ্রুত উত্তর পাবেন।</p>
+      </div>
       <form id="inquiry-form">
         <label for="name">আপনার নাম *</label>
         <input id="name" name="name" type="text" required autocomplete="name" placeholder="আপনার পুরো নাম লিখুন">
@@ -334,8 +345,8 @@
         <label for="message">আপনার প্রশ্ন থাকলে লিখুন</label>
         <textarea id="message" name="message" rows="3" placeholder="ফি, স্কলারশিপ, ডে কেয়ার — যা জানতে চান লিখুন..."></textarea>
 
-        <button class="btn btn-green" type="submit">WhatsApp-এ পাঠান</button>
-        <p style="text-align:center;color:var(--muted);font-size:14.5px;margin:14px 0 0">জমা দিলে আপনার মেসেজটি ওয়েবসাইটে জমা হবে, আর WhatsApp-ও খুলবে — ওখানে Send চাপলেই হবে।</p>
+        <button class="btn btn-green" type="submit" id="submitBtn">জমা দিন</button>
+        <p style="text-align:center;color:var(--muted);font-size:14.5px;margin:14px 0 0">জমা দিলেই আপনার তথ্য Admission টিমের কাছে পৌঁছে যাবে — WhatsApp-এ Send চাপতে হবে না। WhatsApp-ও খুলবে, চাইলে ওখানেও পাঠাতে পারবেন।</p>
         <p id="form-status" style="text-align:center;font-size:15px;margin:10px 0 0;color:var(--green);font-weight:600"></p>
       </form>
     </div>
@@ -383,9 +394,17 @@
 //    kintu WhatsApp tobuo khulbe.
 const WORKER_URL = 'https://uob-admission.contacts-anik1.workers.dev';
 const WHATSAPP_NUMBER = '8801313430064'; // Admission helpline (01313-430064)
+const GOOGLE_FORM_ID = '1FAIpQLSePUS4YvnCVvWkemgbiS22rDtKbh0pXRJ9-bLz04_vRI2gDsg';
+// Google Form field mapping (entry IDs from the form page):
+// নাম: entry.2038080391, WhatsApp নম্বর: entry.96188559, মোবাইল নম্বর: entry.69340549,
+// আগ্রহী প্রোগ্রাম: entry.200628859, SSC GPA: entry.1015442536, HSC GPA: entry.1030504305,
+// অনার্স / CGPA: entry.488845724, প্রশ্ন: entry.1791643754
 
 document.getElementById('inquiry-form').addEventListener('submit', function(e){
   e.preventDefault();
+  // Double-click bondho — ekbar chaplei joma hobe, duibar joma hobe na.
+  var submitBtn = document.getElementById('submitBtn');
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'পাঠানো হচ্ছে…'; }
   var name = document.getElementById('name').value.trim();
   var phone = document.getElementById('phone').value.trim();
   var program = document.getElementById('program').value;
@@ -418,11 +437,39 @@ document.getElementById('inquiry-form').addEventListener('submit', function(e){
     savePromise = Promise.resolve(false);
   }
 
+  // 1b) Google Form-eo joma — backup copy. Eta fire-and-forget:
+  // Google no-cors-e kono confirmation dey na, tai success card
+  // sudhu website save-er upor nirvor korbe. Khali field-e "N/A"
+  // pathano hoy, karon Google Form-e CGPA required.
+  try {
+    var gform = new URLSearchParams();
+    gform.append('entry.2038080391', name);
+    gform.append('entry.96188559', phone);
+    gform.append('entry.69340549', phone);
+    gform.append('entry.200628859', program);
+    gform.append('entry.1015442536', ssc || 'N/A');
+    gform.append('entry.1030504305', hsc || 'N/A');
+    gform.append('entry.488845724', honours || 'N/A');
+    gform.append('entry.1791643754', message || 'N/A');
+    gform.append('fvv', '1');
+    gform.append('pageHistory', '0');
+    fetch('https://docs.google.com/forms/d/e/' + GOOGLE_FORM_ID + '/formResponse', {
+      method: 'POST', mode: 'no-cors', body: gform
+    }).catch(function(){});
+  } catch (e) {}
+
   savePromise.then(function(ok){
-    if (statusEl) {
-      statusEl.textContent = ok
-        ? '✓ আপনার মেসেজটি ওয়েবসাইটে জমা হয়েছে, আর WhatsApp-ও খুলছে — ওখানে Send চাপলেই হবে।'
-        : 'WhatsApp খুলছে — ওখানে Send চাপলেই আপনার মেসেজটি Admission টিমের কাছে যাবে। (এইবার ওয়েবসাইটে জমা হয়নি, শুধু WhatsApp-এ যাচ্ছে।)';
+    if (ok) {
+      // Click-ei joma hoye geche — WhatsApp-e Send chapuk ba na chapuk,
+      // tothyo admin-e pouche geche. Form lukiye sundor success card dekhao.
+      var form = document.getElementById('inquiry-form');
+      var success = document.getElementById('form-success');
+      if (form) form.style.display = 'none';
+      if (success) { success.hidden = false; success.scrollIntoView({behavior:'smooth', block:'center'}); }
+    } else if (statusEl) {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'জমা দিন'; }
+      statusEl.style.color = '#7a1f1a';
+      statusEl.textContent = 'এইবার ওয়েবসাইটে জমা হয়নি — WhatsApp খুলছে, ওখানে Send চাপলেই আপনার মেসেজটি Admission টিমের কাছে যাবে। চাইলে আবার জমা দিন চাপতে পারেন।';
     }
   });
 
