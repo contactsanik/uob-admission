@@ -7,14 +7,16 @@
 <meta name="description" content="ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়ে স্প্রিং ২০২৭ ভর্তি — প্রোগ্রাম, মোট ফি, আবেদনের ধাপ আর যোগাযোগ, এক পাতায়।">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --green:#0b3d2e; --green-2:#0e4d3a; --gold:#f5b301; --gold-soft:#fdf3d0;
     --ink:#1d1d1a; --muted:#5b5b55; --line:#e4e0d4; --bg:#faf8f2; --card:#ffffff;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
+  html{scroll-behavior:smooth}
+  #apply{scroll-margin-top:16px}
+  body{margin:0;background:var(--bg);color:var(--ink);-webkit-text-size-adjust:100%;
     font-family:"Noto Serif Bengali","Hind Siliguri","Noto Sans Bengali",system-ui,sans-serif;
     font-size:17px;line-height:1.85}
   a{color:var(--green-2)}
@@ -66,8 +68,11 @@
   .card h3{font-size:19px;line-height:1.55;margin:8px 0 6px;color:var(--green)}
   .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.8}
 
-  /* ফি টেবিল */
-  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  /* ফি টেবিল — মোবাইলে চাপবে না, দরকার হলে ডানে-বামে স্ক্রল হবে */
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;background:#fff;
+    border:1px solid var(--line);border-radius:12px}
+  table{width:100%;border-collapse:collapse;background:#fff}
+  .table-wrap table{min-width:520px}
   th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:16px}
   tr:last-child th,tr:last-child td{border-bottom:0}
   th{background:var(--green);color:#fff;font-size:15px}
@@ -110,17 +115,53 @@
   footer{background:var(--green);color:#cfe6d8;margin-top:56px}
   footer .wrap{padding-top:36px;padding-bottom:36px;text-align:center}
   footer strong{color:#fff;font-size:19px}
-  footer p{margin:8px 0;font-size:15.5px}
+  footer p{margin:8px 0;font-size:15.5px;overflow-wrap:anywhere}
   footer small{color:#9dbfb0}
 
+  /* মোবাইলে নিচে আটকে থাকা বোতাম — ফর্ম অনেক নিচে, তাই সবসময় হাতের কাছে */
+  .mobile-cta{display:none}
+
   @media (max-width:720px){
-    body{font-size:16px}
-    .hero h2{font-size:29px}
+    body{font-size:16px;line-height:1.8}
+    .wrap{padding:0 16px}
+    .topbar{font-size:14px}
+    .topbar .wrap{justify-content:center;gap:2px 14px;padding-top:7px;padding-bottom:7px}
+    header.site .wrap{padding-top:12px;padding-bottom:12px;gap:12px}
+    .mark{width:44px;height:44px;flex-basis:44px;font-size:17px}
+    .hero .wrap{padding-top:36px;padding-bottom:40px}
+    .hero h2{font-size:27px;line-height:1.55}
+    .hero p.lead{font-size:17px;margin-bottom:22px}
+    h2.sec{font-size:23px}
+    main section{padding:32px 0 6px}
+    .card{padding:18px}
     .cols,.two,.row{grid-template-columns:1fr}
     .head-cta{display:none}
     header.site h1{font-size:19px}
     .form-box{padding:22px 18px}
-    td.fee{white-space:normal}
+    th,td{padding:11px 12px;font-size:15px}
+    td.fee{white-space:nowrap}
+    input,select,textarea{padding:13px 14px}
+    .btn{padding:13px 20px}
+    .form-box button{padding:15px}
+    details{padding:14px 16px}
+    summary{font-size:16.5px}
+    footer .wrap{padding-bottom:112px}
+    .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;
+      background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.08);
+      padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px}
+    .mobile-cta a{flex:1;text-align:center;padding:13px 10px;border-radius:9px;
+      font-weight:700;font-size:16px;text-decoration:none}
+    .mobile-cta a:first-child{background:var(--gold);color:#1d1d1a}
+    .mobile-cta a:last-child{background:var(--green);color:#fff}
+  }
+  @media (max-width:520px){
+    .hero h2{font-size:26px}
+    .hero .actions{flex-direction:column}
+    .hero .actions .btn{width:100%;text-align:center;padding:14px 20px}
+    .hero .note{font-size:14px}
+    .steps li{gap:12px}
+    .steps li::before{flex-basis:36px;height:36px;font-size:17px}
+    .two ul{padding-left:18px}
   }
 </style>
 </head>
@@ -189,6 +230,7 @@
     <p class="sub">নিচের ফিগুলো পুরো প্রোগ্রামের মোট খরচ। ভর্তির সময় ছাড় বা কিস্তির নিয়ম জানতে Admission Office-এ যোগাযোগ করুন।</p>
 
     <h3 class="tbl-title">আন্ডারগ্রাজুয়েট প্রোগ্রাম</h3>
+    <div class="table-wrap">
     <table>
       <tr><th>প্রোগ্রাম</th><th>মোট ফি</th></tr>
       <tr><td>LLB (অনার্স)</td><td class="fee">৩,১৬,৪০০ টাকা</td></tr>
@@ -198,8 +240,10 @@
       <tr><td>BA (Hons.) in English</td><td class="fee">২,৪৭,৬০০ টাকা</td></tr>
       <tr><td>BSS (Hons.) in Sociology</td><td class="fee">১,৯০,৪০০ টাকা</td></tr>
     </table>
+    </div>
 
     <h3 class="tbl-title">গ্রাজুয়েট ও অন্যান্য প্রোগ্রাম</h3>
+    <div class="table-wrap">
     <table>
       <tr><th>প্রোগ্রাম</th><th>মোট ফি</th></tr>
       <tr><td>MBA (২ বছর / ১ বছর)</td><td class="fee">৯২,১০০ – ১,৪৭,৭০০ টাকা</td></tr>
@@ -208,6 +252,7 @@
       <tr><td>PGD in Library &amp; Information Science</td><td class="fee">৪১,১০০ টাকা</td></tr>
       <tr><td>IELTS Course (UOB Students)</td><td class="fee">৮,০০০ টাকা</td></tr>
     </table>
+    </div>
     <p class="tbl-note">ফি আর ছাড়ের শর্ত সময়ের সঙ্গে বদলাতে পারে — ভর্তির আগে অফিস থেকে জেনে নেওয়াই ভালো।</p>
   </section>
 
@@ -249,12 +294,12 @@
       <p class="sub">নাম আর ফোন নম্বর দিন — Admission টিম আপনার সঙ্গে যোগাযোগ করবে।</p>
       <form id="inquiry-form">
         <label for="name">আপনার নাম *</label>
-        <input id="name" name="name" type="text" required placeholder="আপনার পুরো নাম লিখুন">
+        <input id="name" name="name" type="text" required autocomplete="name" placeholder="আপনার পুরো নাম লিখুন">
 
         <div class="row">
           <div>
             <label for="phone">মোবাইল / WhatsApp নম্বর *</label>
-            <input id="phone" name="phone" type="tel" required placeholder="017xxxxxxxx">
+            <input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="017xxxxxxxx">
           </div>
           <div>
             <label for="program">পছন্দের প্রোগ্রাম *</label>
@@ -275,16 +320,16 @@
         <div class="row">
           <div>
             <label for="ssc">SSC ফলাফল (GPA)</label>
-            <input id="ssc" name="ssc" type="text" placeholder="যেমন: 5.00">
+            <input id="ssc" name="ssc" type="text" inputmode="decimal" placeholder="যেমন: 5.00">
           </div>
           <div>
             <label for="hsc">HSC ফলাফল (GPA)</label>
-            <input id="hsc" name="hsc" type="text" placeholder="যেমন: 4.50">
+            <input id="hsc" name="hsc" type="text" inputmode="decimal" placeholder="যেমন: 4.50">
           </div>
         </div>
 
         <label for="honours">অনার্স / ব্যাচেলর ফলাফল (CGPA) — শুধু MBA / Masters আবেদনকারীদের জন্য</label>
-        <input id="honours" name="honours" type="text" placeholder="যেমন: CGPA 3.25">
+        <input id="honours" name="honours" type="text" inputmode="decimal" placeholder="যেমন: CGPA 3.25">
 
         <label for="message">আপনার প্রশ্ন থাকলে লিখুন</label>
         <textarea id="message" name="message" rows="3" placeholder="ফি, স্কলারশিপ, ডে কেয়ার — যা জানতে চান লিখুন..."></textarea>
@@ -323,6 +368,11 @@
     <p><small>© ২০২৭ ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়। সর্বস্বত্ব সংরক্ষিত।</small></p>
   </div>
 </footer>
+
+<div class="mobile-cta">
+  <a href="#apply">জিজ্ঞেস করুন</a>
+  <a href="tel:01313430064">ফোন করুন</a>
+</div>
 
 <script>
 // Admission Hub — inquiry form: website-e save + WhatsApp, ek sathe.
