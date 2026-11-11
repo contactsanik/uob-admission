@@ -2,9 +2,8 @@
 # Cloudflare Workers + D1. GitHub-connected Worker "uob-admission"-er jonno.
 # Repo root-e rakhte hobe. Push korlei Workers Builds auto deploy korbe.
 #
-# ⚠️ database_id: Dashboard → D1 → uob-admission-hub khule je id dekhabe,
-# oita ekhane PASTE_YOUR_D1_ID_HERE-er bodle bosate hobe.
-# Kono database_id / email / API key baniye bosano hoy nai.
+# ⚠️ database_id: tomar D1 uob-admission-hub-er id — agei bosano ache.
+# (Dashboard → D1 → uob-admission-hub theke neoa.)
 
 name = "uob-admission"
 main = "src/index.js"
