@@ -1,1 +1,48 @@
+# wrangler.toml — UOB Admission Hub Backend v1 (GitHub-ready)
+# Cloudflare Workers + D1. GitHub-connected Worker "uob-admission"-er jonno.
+# Repo root-e rakhte hobe. Push korlei Workers Builds auto deploy korbe.
+#
+# ⚠️ database_id: Dashboard → D1 → uob-admission-hub khule je id dekhabe,
+# oita ekhane PASTE_YOUR_D1_ID_HERE-er bodle bosate hobe.
+# Kono database_id / email / API key baniye bosano hoy nai.
 
+name = "uob-admission"
+main = "src/index.js"
+compatibility_date = "2024-11-18"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+# --- Environment variables (non-secret) ---
+[vars]
+ENVIRONMENT = "production"
+SITE_NAME = "UOB Admission Hub"
+ALLOWED_ORIGIN = "https://contactsanik.github.io"
+API_BASE = "/api"
+
+# Email notification (optional) — CHANGE THIS to your own email.
+# IMPORTANT: With FROM_EMAIL = onboarding@resend.dev (free, no domain
+# needed), Resend only delivers to your own Resend account email.
+# So NOTIFY_EMAIL must be the exact email you used to sign up at
+# resend.com. Email na chaile ei line-ta khali rekhe dao — enquiry
+# tobuo D1-te save hobe, email shudhu skip hobe.
+NOTIFY_EMAIL = "PASTE_YOUR_EMAIL_HERE"
+FROM_EMAIL = "onboarding@resend.dev"
+
+# Secrets — do NOT write real values here.
+# Dashboard-e bosate hobe (Worker → Settings → Variables → Add secret):
+#   ADMIN_EMAIL, ADMIN_PASSWORD
+#   RESEND_API_KEY (optional, email chaile)
+
+# --- D1 Database — PRIMARY storage ---
+[[d1_databases]]
+binding = "DB"
+database_name = "uob-admission-hub"
+database_id = "PASTE_YOUR_D1_ID_HERE"
+
+# --- Static assets: NAI ---
+# Hub page-ta src/index.js-er vitorei embed kora (v8.2 pattern),
+# tai public/ folder dorkar nai. "/" ar "/admin" — duitai Worker-er
+# vitore theke serve hoy.
+
+[observability]
+enabled = true
