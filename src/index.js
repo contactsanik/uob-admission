@@ -548,62 +548,59 @@ const ADMIN_HTML = `<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{ --green:#0b3d2e; --green-2:#0e4d3a; --gold:#f5b301; --gold-soft:#fdf3d0;
-    --ink:#1d1d1a; --muted:#5b5b55; --line:#e4e0d4; --bg:#faf8f2; --card:#ffffff;
+  :root{ --blue:#2c428b; --blue-2:#3a56a8; --gold:#f5b301; --gold-soft:#fdf3d0;
+    --ink:#1d1d1a; --muted:#565b66; --line:#dfe3ee; --bg:#f6f7fb; --card:#ffffff;
     --red:#7a1f1a; --red-bg:#fdecea; --amber:#7a5b00; --amber-bg:#fff4ce; }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);
     font-family:"Noto Serif Bengali","Hind Siliguri","Noto Sans Bengali",system-ui,sans-serif;
     font-size:16px;line-height:1.75}
-  a{color:var(--green-2)}
+  a{color:var(--blue-2)}
   .wrap{max-width:900px;margin:0 auto;padding:0 18px 40px}
-  header{background:var(--green);color:#fff;border-bottom:4px solid var(--gold)}
+  header{background:var(--blue);color:#fff;border-bottom:4px solid var(--gold)}
   .topbar{max-width:900px;margin:0 auto;padding:22px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-  .mark{width:50px;height:50px;flex:0 0 50px;background:var(--gold);color:#1d1d1a;border-radius:10px;
-    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+  .mark{width:50px;height:50px;flex:0 0 50px;background:#fff;object-fit:cover;border-radius:10px}
   .topbar h1{margin:0;font-size:22px;line-height:1.3}
-  .topbar p{margin:2px 0 0;color:#dcefe6;font-size:14px}
+  .topbar p{margin:2px 0 0;color:#dde4f6;font-size:14px}
   .spacer{flex:1}
   .pill{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);
     color:#fff;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer}
   .pill:hover{background:rgba(255,255,255,.24)}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:16px 0}
-  .card h2{margin:0 0 4px;font-size:19px;color:var(--green)}
+  .card h2{margin:0 0 4px;font-size:19px;color:var(--blue)}
   .muted{color:var(--muted);font-size:14.5px}
   label{display:block;font-weight:600;margin:14px 0 5px}
-  input,textarea,select{width:100%;padding:11px 12px;border:1px solid #cfc9b8;border-radius:9px;
-    font:inherit;font-size:16px;background:#fffdf7}
+  input,textarea,select{width:100%;padding:11px 12px;border:1px solid #c9cede;border-radius:9px;
+    font:inherit;font-size:16px;background:#fbfcff}
   input:focus,textarea:focus,select:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   textarea{min-height:64px;resize:vertical}
   button{cursor:pointer;border:none;border-radius:9px;padding:11px 18px;font-size:15px;font-weight:700}
-  .btn-green{background:var(--green);color:#fff}
+  .btn-green{background:var(--blue);color:#fff}
   .btn-gold{background:var(--gold);color:#1d1d1a}
-  .btn-ghost{background:#eef4ef;color:var(--ink)}
+  .btn-ghost{background:#eef1f9;color:var(--ink)}
   .btn-small{padding:7px 12px;font-size:13px;margin:2px 4px 2px 0}
   .actions{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
   .msg{padding:11px 13px;border-radius:9px;margin:12px 0;font-size:14px;display:none}
   .msg.err{display:block;background:var(--red-bg);color:var(--red)}
-  .msg.ok{display:block;background:#e6f4ea;color:#14532d}
+  .msg.ok{display:block;background:#e7ebf8;color:#1e3a6e}
   .msg.info{display:block;background:#e8f0fe;color:#174ea6}
-  .note{background:var(--gold-soft);border:1px solid #ead98a;border-radius:10px;padding:13px 15px;font-size:14.5px;margin:12px 0}
-  .item{border:1px solid var(--line);border-left:4px solid var(--green);border-radius:10px;padding:15px;margin:12px 0;background:#fff}
+  .item{border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:10px;padding:15px;margin:12px 0;background:#fff}
   .item h3{margin:0 0 4px;font-size:17px}
   .item p{margin:4px 0;font-size:14.5px;color:#44506a}
-  .badge{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:20px;background:#e6f4ea;color:#14532d}
+  .badge{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:20px;background:#e7ebf8;color:#1e3a6e}
   .badge.new{background:var(--amber-bg);color:var(--amber)}
   .badge.done{background:#e8f0fe;color:#174ea6}
   .hidden{display:none !important}
   .stats{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
   .stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 16px;font-size:14px}
-  .stat b{font-size:19px;color:var(--green)}
-  footer{text-align:center;color:var(--muted);font-size:13px;padding:10px 0 20px}
+  .stat b{font-size:19px;color:var(--blue)}
   @media (max-width:640px){ .topbar h1{font-size:19px} .card{padding:18px 16px} .item{padding:13px} button{padding:13px 18px} }
 </style>
 </head>
 <body>
 <header>
   <div class="topbar">
-    <div class="mark">UOB</div>
+    <img class="mark" src="https://raw.githubusercontent.com/contactsanik/uob-admission/main/logo.jpg" alt="University of Brahmanbaria">
     <div>
       <h1>Admin — Admission Hub</h1>
       <p>ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয় — ভর্তির ইনকোয়ারি</p>
@@ -631,7 +628,6 @@ const ADMIN_HTML = `<!DOCTYPE html>
   <div id="app" class="hidden">
     <div class="card">
       <h2>ইনকোয়ারি (<span id="enquiryCount">0</span>)</h2>
-      <div class="note"><b>মনে রাখবা:</b> নিচের Reply note-টা তোমাকে হাতে লিখতে হবে। WhatsApp-এ তুমি যে reply দিলা, ওটা এখানে নিজে থেকে আসবে না — wa.me লিংক দিয়ে WhatsApp-এর reply sync করা যায় না। WhatsApp-এ reply দেওয়ার পর এখানে এসে কী বললা, সেটা লিখে status-টা বদলে দিও।</div>
       <div class="stats">
         <div class="stat">নতুন: <b id="countNew">0</b></div>
         <div class="stat">উত্তর দেওয়া: <b id="countReplied">0</b></div>
@@ -647,7 +643,6 @@ const ADMIN_HTML = `<!DOCTYPE html>
       <div class="actions"><button class="btn-ghost btn-small" id="refreshBtn" type="button">↻ Refresh</button></div>
       <div id="enquiryList" style="margin-top:10px"><p class="muted">লোড হচ্ছে...</p></div>
     </div>
-    <footer>Admin panel — শুধু তোমার জন্য। তোমার email / password কাউকে দিবা না।</footer>
   </div>
 
 </div>
