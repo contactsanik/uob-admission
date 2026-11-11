@@ -10,8 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --green:#0b3d2e; --green-2:#0e4d3a; --gold:#f5b301; --gold-soft:#fdf3d0;
-    --ink:#1d1d1a; --muted:#5b5b55; --line:#e4e0d4; --bg:#faf8f2; --card:#ffffff;
+    --blue:#2c428b; --blue-2:#3a56a8; --gold:#f5b301; --gold-soft:#fdf3d0;
+    --ink:#1d1d1a; --muted:#565b66; --line:#dfe3ee; --bg:#f6f7fb; --card:#ffffff;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -19,11 +19,11 @@
   body{margin:0;background:var(--bg);color:var(--ink);-webkit-text-size-adjust:100%;
     font-family:"Noto Serif Bengali","Hind Siliguri","Noto Sans Bengali",system-ui,sans-serif;
     font-size:17px;line-height:1.85}
-  a{color:var(--green-2)}
+  a{color:var(--blue-2)}
   .wrap{max-width:960px;margin:0 auto;padding:0 20px}
 
   /* উপরের ছোট বার */
-  .topbar{background:var(--green);color:#dcefe6;font-size:14.5px}
+  .topbar{background:var(--blue);color:#dde4f6;font-size:14.5px}
   .topbar .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
   .topbar a{color:#fff;text-decoration:none;font-weight:600}
 
@@ -38,26 +38,26 @@
   .btn{display:inline-block;padding:11px 20px;border-radius:9px;text-decoration:none;font-weight:700;font-size:16px;border:1px solid transparent;cursor:pointer}
   .btn-gold{background:var(--gold);color:#1d1d1a}
   .btn-gold:hover{background:#e5a800}
-  .btn-line{background:transparent;color:var(--green);border-color:var(--green)}
-  .btn-line:hover{background:#eef4ef}
-  .btn-green{background:var(--green);color:#fff}
-  .btn-green:hover{background:var(--green-2)}
+  .btn-line{background:transparent;color:var(--blue);border-color:var(--blue)}
+  .btn-line:hover{background:#eef1f9}
+  .btn-green{background:var(--blue);color:#fff}
+  .btn-green:hover{background:var(--blue-2)}
   span.btn{cursor:default}
 
   /* হিরো — বাম দিকে লেখা, সাদামাটা */
-  .hero{background:var(--green);color:#fff}
+  .hero{background:var(--blue);color:#fff}
   .hero .wrap{padding-top:52px;padding-bottom:56px}
   .badge{display:inline-block;background:var(--gold);color:#1d1d1a;font-weight:700;font-size:14.5px;
     padding:5px 13px;border-radius:999px;margin-bottom:16px}
   .hero h2{font-size:38px;line-height:1.45;margin:0 0 12px;max-width:560px}
-  .hero p.lead{color:#d6e8de;font-size:18px;line-height:1.8;margin:0 0 26px;max-width:620px}
+  .hero p.lead{color:#d8e0f5;font-size:18px;line-height:1.8;margin:0 0 26px;max-width:620px}
   .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
   .hero .btn-line{color:#fff;border-color:rgba(255,255,255,.55)}
   .hero .btn-line:hover{background:rgba(255,255,255,.12)}
-  .hero .note{margin-top:20px;color:#bcd8c9;font-size:14.5px}
+  .hero .note{margin-top:20px;color:#bfc9ea;font-size:14.5px}
 
   main section{padding:44px 0 8px}
-  h2.sec{font-size:26px;line-height:1.5;margin:0 0 6px;color:var(--green)}
+  h2.sec{font-size:26px;line-height:1.5;margin:0 0 6px;color:var(--blue)}
   p.sub{color:var(--muted);margin:0 0 22px;max-width:680px}
   .rule{width:56px;height:4px;background:var(--gold);border-radius:4px;margin:0 0 22px}
 
@@ -65,7 +65,7 @@
   .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
   .card .no{font-size:13px;font-weight:700;letter-spacing:1px;color:#9a8a3a;text-transform:uppercase}
-  .card h3{font-size:19px;line-height:1.55;margin:8px 0 6px;color:var(--green)}
+  .card h3{font-size:19px;line-height:1.55;margin:8px 0 6px;color:var(--blue)}
   .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.8}
 
   /* ফি টেবিল — মোবাইলে চাপবে না, দরকার হলে ডানে-বামে স্ক্রল হবে */
@@ -75,10 +75,10 @@
   .table-wrap table{min-width:520px}
   th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:16px}
   tr:last-child th,tr:last-child td{border-bottom:0}
-  th{background:var(--green);color:#fff;font-size:15px}
-  td.fee{font-weight:700;color:var(--green);white-space:nowrap}
+  th{background:var(--blue);color:#fff;font-size:15px}
+  td.fee{font-weight:700;color:var(--blue);white-space:nowrap}
   .tbl-note{font-size:14.5px;color:var(--muted);margin-top:10px}
-  h3.tbl-title{font-size:19px;margin:28px 0 12px;color:var(--green)}
+  h3.tbl-title{font-size:19px;margin:28px 0 12px;color:var(--blue)}
   h3.tbl-title:first-of-type{margin-top:0}
 
   /* ধাপ */
@@ -88,42 +88,42 @@
   .steps li::before{content:counter(step, bengali);flex:0 0 40px;height:40px;background:var(--gold-soft);
     border:1px solid #ead98a;color:#7a6410;font-weight:700;font-size:19px;border-radius:50%;
     display:flex;align-items:center;justify-content:center}
-  .steps strong{display:block;font-size:17.5px;color:var(--green)}
+  .steps strong{display:block;font-size:17.5px;color:var(--blue)}
   .steps span{color:var(--muted);font-size:15.5px}
 
   .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .two ul{margin:0;padding-left:20px;color:var(--muted)}
   .two li{margin-bottom:8px}
-  .two h3{margin-top:0;color:var(--green);font-size:19px}
+  .two h3{margin-top:0;color:var(--blue);font-size:19px}
 
   /* ফর্ম */
   .form-box{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:30px}
   .form-box h2{margin-top:0}
   label{display:block;font-weight:600;margin:16px 0 6px}
-  input,select,textarea{width:100%;padding:12px 14px;border:1px solid #cfc9b8;border-radius:9px;
-    font:inherit;font-size:16px;color:var(--ink);background:#fffdf7}
+  input,select,textarea{width:100%;padding:12px 14px;border:1px solid #c9cede;border-radius:9px;
+    font:inherit;font-size:16px;color:var(--ink);background:#fbfcff}
   input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .form-box button{margin-top:22px;width:100%;padding:14px;font:inherit;font-weight:700;font-size:17px}
   .form-box button:disabled{opacity:.65;cursor:wait}
   /* জমা সফল হলে সুন্দর সবুজ কার্ড */
-  .success-box{background:#e6f4ea;border:1px solid #b7dfc2;border-radius:12px;padding:28px 22px;text-align:center}
-  .success-box .tick{width:56px;height:56px;margin:0 auto;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700}
-  .success-box h3{margin:12px 0 6px;color:var(--green);font-size:21px}
+  .success-box{background:#e7ebf8;border:1px solid #b9c7e9;border-radius:12px;padding:28px 22px;text-align:center}
+  .success-box .tick{width:56px;height:56px;margin:0 auto;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700}
+  .success-box h3{margin:12px 0 6px;color:var(--blue);font-size:21px}
   .success-box p{margin:0;color:var(--muted);font-size:15.5px}
   .form-alt{text-align:center;color:var(--muted);margin:18px 0 0;font-size:15.5px}
 
 
   /* FAQ */
   details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
-  summary{font-weight:700;color:var(--green);cursor:pointer;font-size:17px}
+  summary{font-weight:700;color:var(--blue);cursor:pointer;font-size:17px}
   details p{margin:10px 0 0;color:var(--muted)}
 
-  footer{background:var(--green);color:#cfe6d8;margin-top:56px}
+  footer{background:var(--blue);color:#d0d9f3;margin-top:56px}
   footer .wrap{padding-top:36px;padding-bottom:36px;text-align:center}
   footer strong{color:#fff;font-size:19px}
   footer p{margin:8px 0;font-size:15.5px;overflow-wrap:anywhere}
-  footer small{color:#9dbfb0}
+  footer small{color:#a3b1d9}
 
   /* মোবাইলে নিচে আটকে থাকা বোতাম — ফর্ম অনেক নিচে, তাই সবসময় হাতের কাছে */
   .mobile-cta{display:none}
@@ -172,7 +172,7 @@
     .mobile-cta a{flex:1;text-align:center;padding:13px 10px;border-radius:9px;
       font-weight:700;font-size:16px;text-decoration:none}
     .mobile-cta a:first-child{background:var(--gold);color:#1d1d1a}
-    .mobile-cta a:last-child{background:var(--green);color:#fff}
+    .mobile-cta a:last-child{background:var(--blue);color:#fff}
   }
   @media (max-width:520px){
     .hero h2{font-size:26px}
@@ -271,7 +271,7 @@
         <textarea id="message" name="message" rows="3" data-tph="phMsg" placeholder="ফি, স্কলারশিপ, ডে কেয়ার — যা জানতে চান লিখুন..."></textarea>
 
         <button data-t="submit" class="btn btn-green" type="submit" id="submitBtn">জমা দিন</button>
-        <p id="form-status" style="text-align:center;font-size:15px;margin:10px 0 0;color:var(--green);font-weight:600"></p>
+        <p id="form-status" style="text-align:center;font-size:15px;margin:10px 0 0;color:var(--blue);font-weight:600"></p>
       </form>
     </div>
   </div>
@@ -389,8 +389,9 @@
 <footer>
   <div class="wrap">
     <strong data-t="footName">ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়</strong>
-    <p data-t="footAddr">১০২০/১৫ বাইপাস রোড, ডাটিয়ারা, সিজেএম কোর্ট / এলজিইডি অফিসের পাশে, ব্রাহ্মণবাড়িয়া-৩৪০০</p>
+    <p data-t="footAddr">১০২০/১৫ বাইপাস রোড, দাতিয়ারা (সিজেএম কোর্ট / এলজিইডি অফিসের পাশে)</p>
     <p data-t="footContact">হেল্পলাইন: <a href="tel:01313430064" style="color:#fff">০১৩১৩-৪৩০০৬৪</a> &nbsp;|&nbsp; ইমেইল: admission@uob.edu.bd &nbsp;|&nbsp; <a href="https://uob.edu.bd/" style="color:#fff">uob.edu.bd</a></p>
+    <p data-t="footHub"><small>এটি ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়ের ভর্তি সহায়ক পাতা (Admission Hub) — বিশ্ববিদ্যালয়ের অফিসিয়াল ওয়েবসাইট <a href="https://uob.edu.bd/" style="color:#fff">uob.edu.bd</a></small></p>
     <p data-t="footCopy"><small>© ২০২৬ ব্রাহ্মণবাড়িয়া বিশ্ববিদ্যালয়। সর্বস্বত্ব সংরক্ষিত।</small></p>
     <p><small>Developed By Sheikh Anik Hossain</small></p>
   </div>
@@ -406,7 +407,7 @@
 // Language toggle — Bangla / English. Bangla is the default.
 // Original Bangla is captured from the page on load, so toggling back
 // restores it exactly. Choice is saved in localStorage.
-var I18N_EN = {"topLeft": "Spring 2027 — Admission Open", "topHelp": "Helpline: <a href=\"tel:01313430064\">01313-430064</a>", "siteName": "University of Brahmanbaria", "applyBtn": "Apply Now", "badge": "Spring 2027 Admission Open", "heroTitle": "All admission info in one place — fees, programs and how to apply.", "heroLead": "How much each program costs, what documents you need, and how to apply — everything is on this page. You apply on the university's official portal, and if you want to ask something, fill in the form.", "heroApply": "Apply Online", "heroCall": "Call Now", "heroNote": "Apply on the official portal — admission.uob.edu.bd. For final admission information, please check with the Admission Office.", "secBenefits": "What you get here", "ben1no": "Benefit 01", "ben1t": "Day care for mothers", "ben1p": "A modern day care centre on campus so women students can attend classes with peace of mind. Study and motherhood — both can go together.", "ben2no": "Benefit 02", "ben2t": "Up to 70% discount for teachers", "ben2p": "Teachers working in primary, secondary, college and madrasa get up to 70% off tuition fees in masters programs (MBA, MA, MSS), with classes on Friday and Saturday.", "ben3no": "Benefit 03", "ben3t": "Scholarships and IELTS preparation", "ben3p": "Scholarships are available based on SSC and HSC results. Plus an IELTS preparation course run by British Council-certified teachers.", "secFees": "Programs and total fees", "secFeesSub": "The fees below are the total cost of the whole program. For discounts or instalment rules at admission time, please contact the Admission Office.", "tblUG": "Undergraduate Programs", "thProg": "Program", "thFee": "Total Fee", "progLLB": "LLB (Honours)", "feeLLB": "BDT 316,400", "feeCSE": "BDT 316,000", "feeEEE": "BDT 312,600", "feeBBA": "BDT 266,900", "feeEng": "BDT 247,600", "feeSoc": "BDT 190,400", "tblPG": "Graduate and Other Programs", "progMBA": "MBA (2 years / 1 year)", "feeMBA": "BDT 92,100 – 147,700", "feeMA": "BDT 80,700 – 113,300", "feeMSS": "BDT 65,900 – 98,700", "feePGD": "BDT 41,100", "feeIELTS": "BDT 8,000", "tblNote": "Fees and discount terms can change over time — it is best to confirm with the office before admission.", "secSteps": "How to apply", "step1t": "Apply online", "step1d": "Apply at admission.uob.edu.bd, or collect a form directly from the Admission Office.", "step2t": "Verification", "step2d": "Your SSC and HSC information and documents will be verified.", "docsT": "Documents you will need", "doc1": "Attested photocopies of all board mark sheets and testimonials / certificates", "doc2": "Recent colour passport-size photos — 3 copies", "doc3": "For O-Level / A-Level: attested copies of certificates and the A2 Statement of Entry", "doc4": "For freedom fighter quota: attested copies of the ministry certificate and gazette", "eligT": "Who can apply", "elig1": "CSE and EEE: combined SSC + HSC GPA 5 (at least 2.5 in each), or a total of 6.00 (at least 2.00 in one) — science background only", "elig2": "BBA, BA English, BSS Sociology: the same GPA rules — you can apply from any background", "elig3": "MBA (Regular): a 3-year bachelor degree, at least GPA 2.5 in SSC + HSC and CGPA 2.5 in the bachelor degree", "eligSrc": "Source: admission.uob.edu.bd — Admission Requirements. See details there, or call the office — <a href=\"tel:01313430064\">01313-430064</a>", "formT": "Want to ask something? Write to us", "formSub": "Leave your name and phone number — the Admission team will contact you.", "okT": "Thank you! Your information has reached us.", "okP": "The Admission team will contact you soon. Pressing Send on WhatsApp will get you a faster reply.", "labName": "Your name *", "labPhone": "Mobile / WhatsApp number *", "labProg": "Preferred program *", "labSSC": "SSC result (GPA)", "labHSC": "HSC result (GPA)", "labHon": "Honours / Bachelor result (CGPA) — only for MBA / Masters applicants", "labMsg": "Write your question if you have one", "submit": "Submit", "faqT": "Frequently asked questions", "faq1q": "When is the last date for admission?", "faq1a": "Please confirm the last date from the Admission Office — seats are limited, so it is best not to delay.", "faq2q": "Do I have to pay the fee at once, or can I pay in instalments?", "faq2a": "Instalment and discount rules differ by program. Call the office and they will tell you the exact rules.", "faq3q": "When do classes start?", "faq3a": "The class start date will be shared after your admission is confirmed.", "footName": "University of Brahmanbaria", "footAddr": "1020/15 Bypass Road, Datiyara, beside CJM Court / LGED Office, Brahmanbaria-3400", "footContact": "Helpline: <a href=\"tel:01313430064\" style=\"color:#fff\">01313-430064</a> &nbsp;|&nbsp; Email: admission@uob.edu.bd &nbsp;|&nbsp; <a href=\"https://uob.edu.bd/\" style=\"color:#fff\">uob.edu.bd</a>", "footCopy": "© 2026 University of Brahmanbaria. All rights reserved.", "ctaAsk": "Ask us", "ctaCall": "Call Now", "optChoose": "— Choose —", "optLLB": "LLB (Honours)"};
+var I18N_EN = {"topLeft": "Spring 2027 — Admission Open", "topHelp": "Helpline: <a href=\"tel:01313430064\">01313-430064</a>", "siteName": "University of Brahmanbaria", "applyBtn": "Apply Now", "badge": "Spring 2027 Admission Open", "heroTitle": "All admission info in one place — fees, programs and how to apply.", "heroLead": "How much each program costs, what documents you need, and how to apply — everything is on this page. You apply on the university's official portal, and if you want to ask something, fill in the form.", "heroApply": "Apply Online", "heroCall": "Call Now", "heroNote": "Apply on the official portal — admission.uob.edu.bd. For final admission information, please check with the Admission Office.", "secBenefits": "What you get here", "ben1no": "Benefit 01", "ben1t": "Day care for mothers", "ben1p": "A modern day care centre on campus so women students can attend classes with peace of mind. Study and motherhood — both can go together.", "ben2no": "Benefit 02", "ben2t": "Up to 70% discount for teachers", "ben2p": "Teachers working in primary, secondary, college and madrasa get up to 70% off tuition fees in masters programs (MBA, MA, MSS), with classes on Friday and Saturday.", "ben3no": "Benefit 03", "ben3t": "Scholarships and IELTS preparation", "ben3p": "Scholarships are available based on SSC and HSC results. Plus an IELTS preparation course run by British Council-certified teachers.", "secFees": "Programs and total fees", "secFeesSub": "The fees below are the total cost of the whole program. For discounts or instalment rules at admission time, please contact the Admission Office.", "tblUG": "Undergraduate Programs", "thProg": "Program", "thFee": "Total Fee", "progLLB": "LLB (Honours)", "feeLLB": "BDT 316,400", "feeCSE": "BDT 316,000", "feeEEE": "BDT 312,600", "feeBBA": "BDT 266,900", "feeEng": "BDT 247,600", "feeSoc": "BDT 190,400", "tblPG": "Graduate and Other Programs", "progMBA": "MBA (2 years / 1 year)", "feeMBA": "BDT 92,100 – 147,700", "feeMA": "BDT 80,700 – 113,300", "feeMSS": "BDT 65,900 – 98,700", "feePGD": "BDT 41,100", "feeIELTS": "BDT 8,000", "tblNote": "Fees and discount terms can change over time — it is best to confirm with the office before admission.", "secSteps": "How to apply", "step1t": "Apply online", "step1d": "Apply at admission.uob.edu.bd, or collect a form directly from the Admission Office.", "step2t": "Verification", "step2d": "Your SSC and HSC information and documents will be verified.", "docsT": "Documents you will need", "doc1": "Attested photocopies of all board mark sheets and testimonials / certificates", "doc2": "Recent colour passport-size photos — 3 copies", "doc3": "For O-Level / A-Level: attested copies of certificates and the A2 Statement of Entry", "doc4": "For freedom fighter quota: attested copies of the ministry certificate and gazette", "eligT": "Who can apply", "elig1": "CSE and EEE: combined SSC + HSC GPA 5 (at least 2.5 in each), or a total of 6.00 (at least 2.00 in one) — science background only", "elig2": "BBA, BA English, BSS Sociology: the same GPA rules — you can apply from any background", "elig3": "MBA (Regular): a 3-year bachelor degree, at least GPA 2.5 in SSC + HSC and CGPA 2.5 in the bachelor degree", "eligSrc": "Source: admission.uob.edu.bd — Admission Requirements. See details there, or call the office — <a href=\"tel:01313430064\">01313-430064</a>", "formT": "Want to ask something? Write to us", "formSub": "Leave your name and phone number — the Admission team will contact you.", "okT": "Thank you! Your information has reached us.", "okP": "The Admission team will contact you soon. Pressing Send on WhatsApp will get you a faster reply.", "labName": "Your name *", "labPhone": "Mobile / WhatsApp number *", "labProg": "Preferred program *", "labSSC": "SSC result (GPA)", "labHSC": "HSC result (GPA)", "labHon": "Honours / Bachelor result (CGPA) — only for MBA / Masters applicants", "labMsg": "Write your question if you have one", "submit": "Submit", "faqT": "Frequently asked questions", "faq1q": "When is the last date for admission?", "faq1a": "Please confirm the last date from the Admission Office — seats are limited, so it is best not to delay.", "faq2q": "Do I have to pay the fee at once, or can I pay in instalments?", "faq2a": "Instalment and discount rules differ by program. Call the office and they will tell you the exact rules.", "faq3q": "When do classes start?", "faq3a": "The class start date will be shared after your admission is confirmed.", "footName": "University of Brahmanbaria", "footAddr": "1020/15 Bypass Road, Datiyara (beside CJM Court / LGED Office)", "footContact": "Helpline: <a href=\"tel:01313430064\" style=\"color:#fff\">01313-430064</a> &nbsp;|&nbsp; Email: admission@uob.edu.bd &nbsp;|&nbsp; <a href=\"https://uob.edu.bd/\" style=\"color:#fff\">uob.edu.bd</a>", "footCopy": "© 2026 University of Brahmanbaria. All rights reserved.", "ctaAsk": "Ask us", "ctaCall": "Call Now", "optChoose": "— Choose —", "optLLB": "LLB (Honours)", "footHub": "This is the University of Brahmanbaria admission information page (Admission Hub) — the university’s official website is <a href=\"https://uob.edu.bd/\" style=\"color:#fff\">uob.edu.bd</a>"};
 var I18N_EN_PH = {"phName": "Write your full name", "phSSC": "e.g. 5.00", "phHSC": "e.g. 4.50", "phHon": "e.g. CGPA 3.25", "phMsg": "Fees, scholarships, day care — write what you want to know..."};
 var I18N_TITLE_EN = "Spring 2027 Admission — University of Brahmanbaria";
 var I18N_DESC_EN = "Spring 2027 admission at the University of Brahmanbaria — programs, total fees, application steps and contact, on one page.";
