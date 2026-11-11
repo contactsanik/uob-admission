@@ -49,7 +49,7 @@
   .hero .wrap{padding-top:52px;padding-bottom:56px}
   .badge{display:inline-block;background:var(--gold);color:#1d1d1a;font-weight:700;font-size:14.5px;
     padding:5px 13px;border-radius:999px;margin-bottom:16px}
-  .hero h2{font-size:38px;line-height:1.45;margin:0 0 12px;max-width:640px}
+  .hero h2{font-size:38px;line-height:1.45;margin:0 0 12px;max-width:560px}
   .hero p.lead{color:#d6e8de;font-size:18px;line-height:1.8;margin:0 0 26px;max-width:620px}
   .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
   .hero .btn-line{color:#fff;border-color:rgba(255,255,255,.55)}
@@ -113,14 +113,6 @@
   .success-box p{margin:0;color:var(--muted);font-size:15.5px}
   .form-alt{text-align:center;color:var(--muted);margin:18px 0 0;font-size:15.5px}
 
-  /* উপাচার্যের বাণী — ছবি পাশে, লেখা পাশে */
-  .vc{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:start}
-  .vc img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
-  .vc blockquote{margin:0}
-  .vc blockquote p{margin:0 0 12px;font-size:16.5px;line-height:1.8}
-  .vc .who{margin-top:16px}
-  .vc .who strong{display:block;color:var(--green);font-size:17px}
-  .vc .who span{color:var(--muted);font-size:14.5px}
 
   /* FAQ */
   details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
@@ -143,6 +135,11 @@
   .lang-btn:hover{background:rgba(255,255,255,.25)}
   html[lang="en"] .steps li::before{content:counter(step, decimal)}
   html[lang="en"] body{font-family:Georgia,"Noto Serif Bengali","Hind Siliguri",serif}
+
+  /* হিরোতে ফর্ম — ফর্মটাই মূল, তাই হিরোর ডান পাশে কার্ড আকারে */
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:start}
+  .hero .form-box{box-shadow:0 18px 40px rgba(0,0,0,.28)}
+  .hero .form-box h2{font-size:23px}
   @media (max-width:720px){
     body{font-size:16px;line-height:1.8}
     .wrap{padding:0 16px}
@@ -151,13 +148,12 @@
     header.site .wrap{padding-top:12px;padding-bottom:12px;gap:12px}
     .mark{width:44px;height:44px;flex-basis:44px;font-size:17px}
     .hero .wrap{padding-top:36px;padding-bottom:40px}
+    .hero-grid{grid-template-columns:1fr;gap:28px}
     .hero h2{font-size:27px;line-height:1.55}
     .hero p.lead{font-size:17px;margin-bottom:22px}
     h2.sec{font-size:23px}
     main section{padding:32px 0 6px}
     .card{padding:18px}
-    .vc{grid-template-columns:1fr;gap:16px}
-    .vc img{width:200px;margin:0 auto}
     .cols,.two,.row{grid-template-columns:1fr}
     .head-cta{display:none}
     header.site h1{font-size:19px}
@@ -213,36 +209,76 @@
 </header>
 
 <section class="hero">
-  <div class="wrap">
-    <span data-t="badge" class="badge">স্প্রিং ২০২৭ ভর্তি চলছে</span>
-    <h2 data-t="heroTitle">ভর্তির সব তথ্য এক জায়গায় — ফি, প্রোগ্রাম আর আবেদনের নিয়ম।</h2>
-    <p data-t="heroLead" class="lead">কোন প্রোগ্রামে কত খরচ, কী কাগজ লাগবে, কীভাবে আবেদন করবেন — এই পাতায় সব লেখা আছে। আবেদন করবেন বিশ্ববিদ্যালয়ের অফিসিয়াল পোর্টালে, আর কিছু জানতে চাইলে নিচের ফর্মটা পূরণ করুন।</p>
-    <div class="actions">
-      <span data-t="heroApply" class="btn btn-gold">অনলাইনে আবেদন করুন</span>
-      <a data-t="heroCall" class="btn btn-line" href="tel:01313430064">ফোন করুন</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span data-t="badge" class="badge">স্প্রিং ২০২৭ ভর্তি চলছে</span>
+      <h2 data-t="heroTitle">ভর্তির সব তথ্য এক জায়গায় — ফি, প্রোগ্রাম আর আবেদনের নিয়ম।</h2>
+      <p data-t="heroLead" class="lead">কোন প্রোগ্রামে কত খরচ, কী কাগজ লাগবে, কীভাবে আবেদন করবেন — এই পাতায় সব লেখা আছে। আবেদন করবেন বিশ্ববিদ্যালয়ের অফিসিয়াল পোর্টালে, আর কিছু জানতে চাইলে ফর্মটা পূরণ করুন।</p>
+      <div class="actions">
+        <span data-t="heroApply" class="btn btn-gold">অনলাইনে আবেদন করুন</span>
+        <a data-t="heroCall" class="btn btn-line" href="tel:01313430064">ফোন করুন</a>
+      </div>
+      <p data-t="heroNote" class="note">আবেদন করবেন অফিসিয়াল পোর্টালে — admission.uob.edu.bd। ভর্তি সংক্রান্ত চূড়ান্ত তথ্যের জন্য Admission Office-এর সঙ্গে মিলিয়ে নিন।</p>
     </div>
-    <p data-t="heroNote" class="note">আবেদন করবেন অফিসিয়াল পোর্টালে — admission.uob.edu.bd। ভর্তি সংক্রান্ত চূড়ান্ত তথ্যের জন্য Admission Office-এর সঙ্গে মিলিয়ে নিন।</p>
+    <div class="form-box" id="apply">
+      <h2 data-t="formT" class="sec">জানতে চান? লিখে পাঠান</h2>
+      <p data-t="formSub" class="sub">নাম আর ফোন নম্বর দিন — Admission টিম আপনার সঙ্গে যোগাযোগ করবে।</p>
+      <div id="form-success" class="success-box" hidden>
+        <div class="tick">✓</div>
+        <h3 data-t="okT">ধন্যবাদ! আপনার তথ্য পৌঁছে গেছে।</h3>
+        <p data-t="okP">Admission টিম শীঘ্রই আপনার সঙ্গে যোগাযোগ করবে। WhatsApp-এ Send চাপলে আরও দ্রুত উত্তর পাবেন।</p>
+      </div>
+      <form id="inquiry-form">
+        <label data-t="labName" for="name">আপনার নাম *</label>
+        <input id="name" name="name" type="text" required autocomplete="name" data-tph="phName" placeholder="আপনার পুরো নাম লিখুন">
+
+        <div class="row">
+          <div>
+            <label data-t="labPhone" for="phone">মোবাইল / WhatsApp নম্বর *</label>
+            <input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="017xxxxxxxx">
+          </div>
+          <div>
+            <label data-t="labProg" for="program">পছন্দের প্রোগ্রাম *</label>
+            <select id="program" name="program" required>
+              <option value="" data-t="optChoose">— বেছে নিন —</option>
+              <option value="LLB (অনার্স)" data-t="optLLB">LLB (অনার্স)</option>
+              <option value="B.Sc. in CSE">B.Sc. in CSE</option>
+              <option value="B.Sc. in EEE">B.Sc. in EEE</option>
+              <option value="BBA">BBA</option>
+              <option value="BA (Hons.) in English">BA (Hons.) in English</option>
+              <option value="BSS (Hons.) in Sociology">BSS (Hons.) in Sociology</option>
+              <option value="MBA / Masters">MBA / Masters</option>
+              <option value="IELTS Preparation">IELTS Preparation</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label data-t="labSSC" for="ssc">SSC ফলাফল (GPA)</label>
+            <input id="ssc" name="ssc" type="text" inputmode="decimal" data-tph="phSSC" placeholder="যেমন: 5.00">
+          </div>
+          <div>
+            <label data-t="labHSC" for="hsc">HSC ফলাফল (GPA)</label>
+            <input id="hsc" name="hsc" type="text" inputmode="decimal" data-tph="phHSC" placeholder="যেমন: 4.50">
+          </div>
+        </div>
+
+        <label data-t="labHon" for="honours">অনার্স / ব্যাচেলর ফলাফল (CGPA) — শুধু MBA / Masters আবেদনকারীদের জন্য</label>
+        <input id="honours" name="honours" type="text" inputmode="decimal" data-tph="phHon" placeholder="যেমন: CGPA 3.25">
+
+        <label data-t="labMsg" for="message">আপনার প্রশ্ন থাকলে লিখুন</label>
+        <textarea id="message" name="message" rows="3" data-tph="phMsg" placeholder="ফি, স্কলারশিপ, ডে কেয়ার — যা জানতে চান লিখুন..."></textarea>
+
+        <button data-t="submit" class="btn btn-green" type="submit" id="submitBtn">জমা দিন</button>
+        <p id="form-status" style="text-align:center;font-size:15px;margin:10px 0 0;color:var(--green);font-weight:600"></p>
+      </form>
+    </div>
   </div>
 </section>
 
 <main class="wrap">
 
-  <section>
-    <h2 class="sec" data-t="vcTitle">উপাচার্যের বাণী</h2>
-    <div class="rule"></div>
-    <div class="card vc">
-      <img src="https://raw.githubusercontent.com/contactsanik/uob-admission/main/vc.jpg" alt="Professor Dr. Syed Samsuddin Ahmed, Vice-Chancellor, University of Brahmanbaria" loading="lazy">
-      <blockquote>
-        <p>The University of Brahmanbaria recognizes the transformative power of Computer Science and Engineering (CSE) in shaping a modern, innovative, and progressive society. CSE is not merely about coding or machines; it is the driving force of the digital era, solving real-world problems, connecting people, and powering industries.</p>
-        <p>Through computing and technology, we create solutions that foster efficiency, innovation, and inclusivity—values essential for economic growth and global development. From advancing artificial intelligence to securing data, from building smart systems to empowering underrepresented communities through technology, CSE stands as the engine of progress and creativity.</p>
-        <p>As an institution of higher learning, we are committed to nurturing skilled, ethical engineers who leverage technology responsibly. Let us all strive to innovate, collaborate, and contribute to building a future where technology serves humanity and creates opportunities for all.</p>
-        <p>The objective and goal of the University is simple yet noble – empowering the people of Bangladesh with the tools of gaining and creating knowledge so that they may bring about a positive social change.</p>
-        <p>The University of Brahmanbaria is part of a philanthropic initiative striving to empower disadvantaged people and the fee structure for students has been devised in that light also. There are ample opportunities for students to display academic prowess and qualify for merit-based scholarships.</p>
-        <p>It is in this light I would like to conclude my welcoming message to you all from the University of Brahmanbaria. Our university has begun with a good start by taking small but measured steps and in time we aspire that the University of Brahmanbaria will produce social change makers, who will work for a positive social change.</p>
-        <div class="who"><strong>Professor Dr. Syed Samsuddin Ahmed</strong><span>Vice-Chancellor, University of Brahmanbaria</span></div>
-      </blockquote>
-    </div>
-  </section>
 
   <section>
     <h2 data-t="secBenefits" class="sec">এখানে ভর্তি হলে কী পাবেন</h2>
@@ -330,62 +366,6 @@
     </div>
   </section>
 
-  <section id="apply">
-    <div class="form-box">
-      <h2 data-t="formT" class="sec">জানতে চান? লিখে পাঠান</h2>
-      <p data-t="formSub" class="sub">নাম আর ফোন নম্বর দিন — Admission টিম আপনার সঙ্গে যোগাযোগ করবে।</p>
-      <div id="form-success" class="success-box" hidden>
-        <div class="tick">✓</div>
-        <h3 data-t="okT">ধন্যবাদ! আপনার তথ্য পৌঁছে গেছে।</h3>
-        <p data-t="okP">Admission টিম শীঘ্রই আপনার সঙ্গে যোগাযোগ করবে। WhatsApp-এ Send চাপলে আরও দ্রুত উত্তর পাবেন।</p>
-      </div>
-      <form id="inquiry-form">
-        <label data-t="labName" for="name">আপনার নাম *</label>
-        <input id="name" name="name" type="text" required autocomplete="name" data-tph="phName" placeholder="আপনার পুরো নাম লিখুন">
-
-        <div class="row">
-          <div>
-            <label data-t="labPhone" for="phone">মোবাইল / WhatsApp নম্বর *</label>
-            <input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="017xxxxxxxx">
-          </div>
-          <div>
-            <label data-t="labProg" for="program">পছন্দের প্রোগ্রাম *</label>
-            <select id="program" name="program" required>
-              <option value="" data-t="optChoose">— বেছে নিন —</option>
-              <option value="LLB (অনার্স)" data-t="optLLB">LLB (অনার্স)</option>
-              <option value="B.Sc. in CSE">B.Sc. in CSE</option>
-              <option value="B.Sc. in EEE">B.Sc. in EEE</option>
-              <option value="BBA">BBA</option>
-              <option value="BA (Hons.) in English">BA (Hons.) in English</option>
-              <option value="BSS (Hons.) in Sociology">BSS (Hons.) in Sociology</option>
-              <option value="MBA / Masters">MBA / Masters</option>
-              <option value="IELTS Preparation">IELTS Preparation</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="row">
-          <div>
-            <label data-t="labSSC" for="ssc">SSC ফলাফল (GPA)</label>
-            <input id="ssc" name="ssc" type="text" inputmode="decimal" data-tph="phSSC" placeholder="যেমন: 5.00">
-          </div>
-          <div>
-            <label data-t="labHSC" for="hsc">HSC ফলাফল (GPA)</label>
-            <input id="hsc" name="hsc" type="text" inputmode="decimal" data-tph="phHSC" placeholder="যেমন: 4.50">
-          </div>
-        </div>
-
-        <label data-t="labHon" for="honours">অনার্স / ব্যাচেলর ফলাফল (CGPA) — শুধু MBA / Masters আবেদনকারীদের জন্য</label>
-        <input id="honours" name="honours" type="text" inputmode="decimal" data-tph="phHon" placeholder="যেমন: CGPA 3.25">
-
-        <label data-t="labMsg" for="message">আপনার প্রশ্ন থাকলে লিখুন</label>
-        <textarea id="message" name="message" rows="3" data-tph="phMsg" placeholder="ফি, স্কলারশিপ, ডে কেয়ার — যা জানতে চান লিখুন..."></textarea>
-
-        <button data-t="submit" class="btn btn-green" type="submit" id="submitBtn">জমা দিন</button>
-        <p id="form-status" style="text-align:center;font-size:15px;margin:10px 0 0;color:var(--green);font-weight:600"></p>
-      </form>
-    </div>
-  </section>
 
   <section>
     <h2 data-t="faqT" class="sec">যা সবাই জিজ্ঞেস করে</h2>
@@ -426,7 +406,7 @@
 // Language toggle — Bangla / English. Bangla is the default.
 // Original Bangla is captured from the page on load, so toggling back
 // restores it exactly. Choice is saved in localStorage.
-var I18N_EN = {"topLeft": "Spring 2027 — Admission Open", "topHelp": "Helpline: <a href=\"tel:01313430064\">01313-430064</a>", "siteName": "University of Brahmanbaria", "applyBtn": "Apply Now", "badge": "Spring 2027 Admission Open", "heroTitle": "All admission info in one place — fees, programs and how to apply.", "heroLead": "How much each program costs, what documents you need, and how to apply — everything is on this page. You apply on the university's official portal, and if you want to ask something, fill in the form below.", "heroApply": "Apply Online", "heroCall": "Call Now", "heroNote": "Apply on the official portal — admission.uob.edu.bd. For final admission information, please check with the Admission Office.", "secBenefits": "What you get here", "ben1no": "Benefit 01", "ben1t": "Day care for mothers", "ben1p": "A modern day care centre on campus so women students can attend classes with peace of mind. Study and motherhood — both can go together.", "ben2no": "Benefit 02", "ben2t": "Up to 70% discount for teachers", "ben2p": "Teachers working in primary, secondary, college and madrasa get up to 70% off tuition fees in masters programs (MBA, MA, MSS), with classes on Friday and Saturday.", "ben3no": "Benefit 03", "ben3t": "Scholarships and IELTS preparation", "ben3p": "Scholarships are available based on SSC and HSC results. Plus an IELTS preparation course run by British Council-certified teachers.", "secFees": "Programs and total fees", "secFeesSub": "The fees below are the total cost of the whole program. For discounts or instalment rules at admission time, please contact the Admission Office.", "tblUG": "Undergraduate Programs", "thProg": "Program", "thFee": "Total Fee", "progLLB": "LLB (Honours)", "feeLLB": "BDT 316,400", "feeCSE": "BDT 316,000", "feeEEE": "BDT 312,600", "feeBBA": "BDT 266,900", "feeEng": "BDT 247,600", "feeSoc": "BDT 190,400", "tblPG": "Graduate and Other Programs", "progMBA": "MBA (2 years / 1 year)", "feeMBA": "BDT 92,100 – 147,700", "feeMA": "BDT 80,700 – 113,300", "feeMSS": "BDT 65,900 – 98,700", "feePGD": "BDT 41,100", "feeIELTS": "BDT 8,000", "tblNote": "Fees and discount terms can change over time — it is best to confirm with the office before admission.", "secSteps": "How to apply", "step1t": "Apply online", "step1d": "Apply at admission.uob.edu.bd, or collect a form directly from the Admission Office.", "step2t": "Verification", "step2d": "Your SSC and HSC information and documents will be verified.", "docsT": "Documents you will need", "doc1": "Attested photocopies of all board mark sheets and testimonials / certificates", "doc2": "Recent colour passport-size photos — 3 copies", "doc3": "For O-Level / A-Level: attested copies of certificates and the A2 Statement of Entry", "doc4": "For freedom fighter quota: attested copies of the ministry certificate and gazette", "eligT": "Who can apply", "elig1": "CSE and EEE: combined SSC + HSC GPA 5 (at least 2.5 in each), or a total of 6.00 (at least 2.00 in one) — science background only", "elig2": "BBA, BA English, BSS Sociology: the same GPA rules — you can apply from any background", "elig3": "MBA (Regular): a 3-year bachelor degree, at least GPA 2.5 in SSC + HSC and CGPA 2.5 in the bachelor degree", "eligSrc": "Source: admission.uob.edu.bd — Admission Requirements. See details there, or call the office — <a href=\"tel:01313430064\">01313-430064</a>", "formT": "Want to ask something? Write to us", "formSub": "Leave your name and phone number — the Admission team will contact you.", "okT": "Thank you! Your information has reached us.", "okP": "The Admission team will contact you soon. Pressing Send on WhatsApp will get you a faster reply.", "labName": "Your name *", "labPhone": "Mobile / WhatsApp number *", "labProg": "Preferred program *", "labSSC": "SSC result (GPA)", "labHSC": "HSC result (GPA)", "labHon": "Honours / Bachelor result (CGPA) — only for MBA / Masters applicants", "labMsg": "Write your question if you have one", "submit": "Submit", "faqT": "Frequently asked questions", "faq1q": "When is the last date for admission?", "faq1a": "Please confirm the last date from the Admission Office — seats are limited, so it is best not to delay.", "faq2q": "Do I have to pay the fee at once, or can I pay in instalments?", "faq2a": "Instalment and discount rules differ by program. Call the office and they will tell you the exact rules.", "faq3q": "When do classes start?", "faq3a": "The class start date will be shared after your admission is confirmed.", "footName": "University of Brahmanbaria", "footAddr": "1020/15 Bypass Road, Datiyara, beside CJM Court / LGED Office, Brahmanbaria-3400", "footContact": "Helpline: <a href=\"tel:01313430064\" style=\"color:#fff\">01313-430064</a> &nbsp;|&nbsp; Email: admission@uob.edu.bd &nbsp;|&nbsp; <a href=\"https://uob.edu.bd/\" style=\"color:#fff\">uob.edu.bd</a>", "footCopy": "© 2026 University of Brahmanbaria. All rights reserved.", "ctaAsk": "Ask us", "ctaCall": "Call Now", "optChoose": "— Choose —", "optLLB": "LLB (Honours)", "vcTitle": "Message from the Vice-Chancellor"};
+var I18N_EN = {"topLeft": "Spring 2027 — Admission Open", "topHelp": "Helpline: <a href=\"tel:01313430064\">01313-430064</a>", "siteName": "University of Brahmanbaria", "applyBtn": "Apply Now", "badge": "Spring 2027 Admission Open", "heroTitle": "All admission info in one place — fees, programs and how to apply.", "heroLead": "How much each program costs, what documents you need, and how to apply — everything is on this page. You apply on the university's official portal, and if you want to ask something, fill in the form.", "heroApply": "Apply Online", "heroCall": "Call Now", "heroNote": "Apply on the official portal — admission.uob.edu.bd. For final admission information, please check with the Admission Office.", "secBenefits": "What you get here", "ben1no": "Benefit 01", "ben1t": "Day care for mothers", "ben1p": "A modern day care centre on campus so women students can attend classes with peace of mind. Study and motherhood — both can go together.", "ben2no": "Benefit 02", "ben2t": "Up to 70% discount for teachers", "ben2p": "Teachers working in primary, secondary, college and madrasa get up to 70% off tuition fees in masters programs (MBA, MA, MSS), with classes on Friday and Saturday.", "ben3no": "Benefit 03", "ben3t": "Scholarships and IELTS preparation", "ben3p": "Scholarships are available based on SSC and HSC results. Plus an IELTS preparation course run by British Council-certified teachers.", "secFees": "Programs and total fees", "secFeesSub": "The fees below are the total cost of the whole program. For discounts or instalment rules at admission time, please contact the Admission Office.", "tblUG": "Undergraduate Programs", "thProg": "Program", "thFee": "Total Fee", "progLLB": "LLB (Honours)", "feeLLB": "BDT 316,400", "feeCSE": "BDT 316,000", "feeEEE": "BDT 312,600", "feeBBA": "BDT 266,900", "feeEng": "BDT 247,600", "feeSoc": "BDT 190,400", "tblPG": "Graduate and Other Programs", "progMBA": "MBA (2 years / 1 year)", "feeMBA": "BDT 92,100 – 147,700", "feeMA": "BDT 80,700 – 113,300", "feeMSS": "BDT 65,900 – 98,700", "feePGD": "BDT 41,100", "feeIELTS": "BDT 8,000", "tblNote": "Fees and discount terms can change over time — it is best to confirm with the office before admission.", "secSteps": "How to apply", "step1t": "Apply online", "step1d": "Apply at admission.uob.edu.bd, or collect a form directly from the Admission Office.", "step2t": "Verification", "step2d": "Your SSC and HSC information and documents will be verified.", "docsT": "Documents you will need", "doc1": "Attested photocopies of all board mark sheets and testimonials / certificates", "doc2": "Recent colour passport-size photos — 3 copies", "doc3": "For O-Level / A-Level: attested copies of certificates and the A2 Statement of Entry", "doc4": "For freedom fighter quota: attested copies of the ministry certificate and gazette", "eligT": "Who can apply", "elig1": "CSE and EEE: combined SSC + HSC GPA 5 (at least 2.5 in each), or a total of 6.00 (at least 2.00 in one) — science background only", "elig2": "BBA, BA English, BSS Sociology: the same GPA rules — you can apply from any background", "elig3": "MBA (Regular): a 3-year bachelor degree, at least GPA 2.5 in SSC + HSC and CGPA 2.5 in the bachelor degree", "eligSrc": "Source: admission.uob.edu.bd — Admission Requirements. See details there, or call the office — <a href=\"tel:01313430064\">01313-430064</a>", "formT": "Want to ask something? Write to us", "formSub": "Leave your name and phone number — the Admission team will contact you.", "okT": "Thank you! Your information has reached us.", "okP": "The Admission team will contact you soon. Pressing Send on WhatsApp will get you a faster reply.", "labName": "Your name *", "labPhone": "Mobile / WhatsApp number *", "labProg": "Preferred program *", "labSSC": "SSC result (GPA)", "labHSC": "HSC result (GPA)", "labHon": "Honours / Bachelor result (CGPA) — only for MBA / Masters applicants", "labMsg": "Write your question if you have one", "submit": "Submit", "faqT": "Frequently asked questions", "faq1q": "When is the last date for admission?", "faq1a": "Please confirm the last date from the Admission Office — seats are limited, so it is best not to delay.", "faq2q": "Do I have to pay the fee at once, or can I pay in instalments?", "faq2a": "Instalment and discount rules differ by program. Call the office and they will tell you the exact rules.", "faq3q": "When do classes start?", "faq3a": "The class start date will be shared after your admission is confirmed.", "footName": "University of Brahmanbaria", "footAddr": "1020/15 Bypass Road, Datiyara, beside CJM Court / LGED Office, Brahmanbaria-3400", "footContact": "Helpline: <a href=\"tel:01313430064\" style=\"color:#fff\">01313-430064</a> &nbsp;|&nbsp; Email: admission@uob.edu.bd &nbsp;|&nbsp; <a href=\"https://uob.edu.bd/\" style=\"color:#fff\">uob.edu.bd</a>", "footCopy": "© 2026 University of Brahmanbaria. All rights reserved.", "ctaAsk": "Ask us", "ctaCall": "Call Now", "optChoose": "— Choose —", "optLLB": "LLB (Honours)"};
 var I18N_EN_PH = {"phName": "Write your full name", "phSSC": "e.g. 5.00", "phHSC": "e.g. 4.50", "phHon": "e.g. CGPA 3.25", "phMsg": "Fees, scholarships, day care — write what you want to know..."};
 var I18N_TITLE_EN = "Spring 2027 Admission — University of Brahmanbaria";
 var I18N_DESC_EN = "Spring 2027 admission at the University of Brahmanbaria — programs, total fees, application steps and contact, on one page.";
