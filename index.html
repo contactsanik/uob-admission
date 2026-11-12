@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
   :root{
     --blue:#2c428b; --blue-2:#3a56a8; --gold:#f5b301; --gold-soft:#fdf3d0;
@@ -272,7 +273,8 @@
         <label data-t="labMsg" for="message">আপনার প্রশ্ন থাকলে লিখুন</label>
         <textarea id="message" name="message" rows="3" data-tph="phMsg" placeholder="ফি, স্কলারশিপ, ডে কেয়ার — যা জানতে চান লিখুন..."></textarea>
 
-        <button data-t="submit" class="btn btn-green" type="submit" id="submitBtn">জমা দিন</button>
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAAF9zuo1OHVUEb1T5" style="display:flex;justify-content:center;margin:14px 0 4px"></div>
+<button data-t="submit" class="btn btn-green" type="submit" id="submitBtn">জমা দিন</button>
         <p id="form-status" style="text-align:center;font-size:15px;margin:10px 0 0;color:var(--blue);font-weight:600"></p>
       </form>
     </div>
@@ -518,6 +520,14 @@ document.getElementById('inquiry-form').addEventListener('submit', function(e){
   var hsc = document.getElementById('hsc').value.trim();
   var honours = document.getElementById('honours').value.trim();
   var message = document.getElementById('message').value.trim();
+  // Turnstile token — Managed mode-e widget nijei hidden input-e
+  // cf-turnstile-response bosay; getResponse() fallback.
+  var tsToken = '';
+  try {
+    var tsInput = document.querySelector('input[name="cf-turnstile-response"]');
+    if (tsInput) tsToken = tsInput.value || '';
+    if (!tsToken && window.turnstile && window.turnstile.getResponse) { tsToken = window.turnstile.getResponse() || ''; }
+  } catch (e) {}
   var lines = ['ভর্তি বিষয়ে জানতে চাই', 'নাম: ' + name, 'ফোন: ' + phone, 'পছন্দের প্রোগ্রাম: ' + program];
   if (ssc) lines.push('SSC GPA: ' + ssc);
   if (hsc) lines.push('HSC GPA: ' + hsc);
@@ -535,7 +545,7 @@ document.getElementById('inquiry-form').addEventListener('submit', function(e){
     savePromise = fetch(WORKER_URL + '/api/enquiry', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, phone: phone, program: program, ssc_gpa: ssc, hsc_gpa: hsc, honours_cgpa: honours, message: message }),
+      body: JSON.stringify({ name: name, phone: phone, program: program, ssc_gpa: ssc, hsc_gpa: hsc, honours_cgpa: honours, message: message, turnstile_token: tsToken }),
       signal: controller.signal
     }).then(function(res){ return res.ok; }).catch(function(){ return false; })
       .then(function(ok){ clearTimeout(timeoutId); return ok; });
@@ -574,6 +584,7 @@ document.getElementById('inquiry-form').addEventListener('submit', function(e){
       if (success) { success.hidden = false; success.scrollIntoView({behavior:'smooth', block:'center'}); }
     } else if (statusEl) {
       if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = L('জমা দিন', 'Submit'); }
+      if (window.turnstile && window.turnstile.reset) { try { window.turnstile.reset(); } catch (e) {} }
       statusEl.style.color = '#7a1f1a';
       statusEl.textContent = L('এইবার ওয়েবসাইটে জমা হয়নি — WhatsApp খুলছে, ওখানে Send চাপলেই আপনার মেসেজটি Admission টিমের কাছে যাবে। চাইলে আবার জমা দিন চাপতে পারেন।', 'It did not save on the website this time — WhatsApp is opening, press Send there and your message will reach the Admission team. You can press Submit again if you like.');
     }
