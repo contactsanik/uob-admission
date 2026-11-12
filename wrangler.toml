@@ -38,10 +38,13 @@ binding = "DB"
 database_name = "uob-admission-hub"
 database_id = "b58109fe-01e2-4c4e-8581-a94f0ebd75f4"
 
-# --- Static assets: NAI ---
-# Hub page-ta src/index.js-er vitorei embed kora (v8.2 pattern),
-# tai public/ folder dorkar nai. "/" ar "/admin" — duitai Worker-er
-# vitore theke serve hoy.
+# --- Static assets ---
+# public/logo.jpg Worker-er "/logo.jpg" theke serve hoy (ASSETS).
+# "/" ar "/admin" — ager motoi Worker-er vitore theke serve hoy
+# (src/index.js-er embedded copy; ASSETS-e na pele fallback).
+[assets]
+directory = "./public"
+binding = "ASSETS"
 
 [observability]
 enabled = true
